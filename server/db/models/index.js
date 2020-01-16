@@ -3,8 +3,8 @@ const Category = require("./Category");
 const Nominee = require("./Nominee");
 const Movie = require("./Movie");
 
-User.hasMany(Nominee, { through: "Choice" });
-Nominee.hasMany(User, { through: "Choice" });
+User.hasMany(Movie, { through: Nominee });
+Movie.hasMany(User, { through: Nominee });
 
 Category.hasMany(Nominee);
 Nominee.hasOne(Category);
