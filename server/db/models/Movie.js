@@ -8,6 +8,10 @@ const Movie = db.define("movie", {
   bio: {
     type: Sequelize.TEXT
   },
+  country: {
+    type: Sequelize.STRING,
+    allowNull: true
+  },
   trailerLink: {
     type: Sequelize.STRING
   }
