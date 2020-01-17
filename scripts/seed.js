@@ -94,6 +94,8 @@ async function seed() {
     Movie.create({ title: "Knives Out" })
   ]);
 
+  //Custom components for categories[11, 14, 16, 22, 23]
+
   const nominees = await Promise.all([
     Nominee.create({
       name: "Antonio Banderas",
