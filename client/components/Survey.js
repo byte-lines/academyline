@@ -23,18 +23,18 @@ class Survey extends React.Component {
     const { step } = this.state;
     return (
       <div id="survey">
-        <NomineeDisplay category={categories[step] || {}} />;
-        <button
-          type="button"
-          onClick={() => this.changeStep(this.state.step + 1)}
-        >
-          next
-        </button>
+        <NomineeDisplay category={categories[step] || {}} />
         <button
           type="button"
           onClick={() => this.changeStep(this.state.step - 1)}
         >
           back
+        </button>
+        <button
+          type="button"
+          onClick={() => this.changeStep(this.state.step + 1)}
+        >
+          next
         </button>
       </div>
     );
