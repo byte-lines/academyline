@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
 
-export default  NomineeDisplay() {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+const NomineeDisplay = props => {
+  return (
+    <div>
+      {/* something like this for movie vs. person */}
+      {/* simple SCSS grid */}
+      <div>{isMovieCategory ? props.nominee.imgURL : props.movieURL}</div>
+      <div>{props.nominee.name}</div>
+    </div>
+  );
+};
+
+export default NomineeDisplay;
