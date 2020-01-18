@@ -10,3 +10,5 @@ const CategoryDisplay = props => {
     </React.Fragment>
   );
 };
+
+export default CategoryDisplay;

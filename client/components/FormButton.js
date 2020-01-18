@@ -12,3 +12,5 @@ const FormButton = props => {
     </div>
   );
 };
+
+export default FormButton;
