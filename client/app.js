@@ -1,11 +1,28 @@
-import React, { Component } from "react";
+import React from "react";
+import axios from "axios";
 
-export class App extends Component {
+import Routes from "./routes";
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      user: "",
+      categories: []
+    };
+  }
+
+  async componentDidMount() {
+    const { data } = await axios.get("/api/category");
+    this.setState({
+      categories: data
+    });
+  }
+
   render() {
+    const categories = this.state.categories || [];
     return (
-      <div>
-        <TopBar />
-        <LandingPage />
+      <div id="mount">
+        <Routes categories={categories} />
       </div>
     );
   }

@@ -15,8 +15,11 @@ router.get("/", async (req, res) => {
         }
       ]
     });
+
     res.json(categories);
   } catch (err) {
-    next(err);
+    console.error(err);
   }
 });
+
+module.exports = router;
