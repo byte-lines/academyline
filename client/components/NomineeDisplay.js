@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-export default  NomineeDisplay() {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+const NomineeDisplay = props => {
+  const nominees = props.category.nominees || [];
+  return (
+    <ul>
+      {nominees.map((nom, i) => (
+        <li key={i}>{nom.name}</li>
+      ))}
+    </ul>
+  );
+};
+
+export default NomineeDisplay;
