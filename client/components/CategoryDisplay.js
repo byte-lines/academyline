@@ -6,12 +6,11 @@ const CategoryDisplay = props => {
   return category ? (
     <React.Fragment>
       <div>
-        {category.name}
+        <h3>{category.name}</h3>
         {category.nominees.map(nominee => {
           return <NomineeDisplay nominee={nominee} />;
         })}
       </div>
-      <h1>yo</h1>
     </React.Fragment>
   ) : null;
 };

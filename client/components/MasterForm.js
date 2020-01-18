@@ -57,7 +57,7 @@ class MasterForm extends React.Component {
     const { categories } = this.props;
     return categories ? (
       <div id="mount">
-        <h1 id="masterform-heading">Test</h1>
+        <h1 id="masterform-heading">OSCARS SURVEY</h1>
         <CategoryDisplay category={categories[step]} />
         <p>{step + 1}</p>
         <div id="btn-display">

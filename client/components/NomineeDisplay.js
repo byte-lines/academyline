@@ -12,8 +12,7 @@ const NomineeDisplay = props => {
       <div>
         <strong>{nominee.name}</strong> for <i>{nominee.movie.title}</i>
       </div>
-      <div>{}</div>
-      <h1>yo</h1>
+      <br />
     </div>
   ) : null;
 };
