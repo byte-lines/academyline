@@ -2,14 +2,18 @@ import React from "react";
 import NomineeDisplay from "./NomineeDisplay";
 
 const CategoryDisplay = props => {
-  return (
+  const { category } = props;
+  return category ? (
     <React.Fragment>
-      {/* {props....[props.step].map(nominee => {
-        return <NomineeDisplay nominee={nominee} />;
-      })} */}
+      <div>
+        {category.name}
+        {category.nominees.map(nominee => {
+          return <NomineeDisplay nominee={nominee} />;
+        })}
+      </div>
       <h1>yo</h1>
     </React.Fragment>
-  );
+  ) : null;
 };
 
 export default CategoryDisplay;
