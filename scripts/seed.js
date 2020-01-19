@@ -1,5 +1,5 @@
-const { db } = require('../server/db');
-const { User, Category, Nominee, Movie } = require('../server/db/models/');
+// const { db } = require('../server/db');
+const { User, Category, Nominee, Movie, db } = require('../server/db');
 
 async function seed() {
   await db.sync({ force: true });
