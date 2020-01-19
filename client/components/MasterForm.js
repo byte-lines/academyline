@@ -8,16 +8,22 @@ class MasterForm extends React.Component {
     super();
     this.state = {
       user: "", //session user name
-      selectedChoices: [], //growing array of selected nominees (objs)
-      step: 5 //which step of the form (24/25 total)
+      selectedChoices: Array(24).fill(null), //growing array of selected nominees (objs)
+      step: 0 //which step of the form (24/25 total)
     };
     this.handleSelect = this.handleSelect.bind(this);
-    this.handleChoicesSubmit = this.handleChoicesSubmit.bind(this);
     this.previousStep = this.previousStep.bind(this);
     this.nextStep = this.nextStep.bind(this);
     this.numPages = 25;
   }
-  handleSelect(event) {}
+  handleSelect(nomineeId) {
+    const { step, selectedChoices } = this.state;
+    const newChoices = selectedChoices;
+    newChoices[step] = nomineeId;
+    this.setState({
+      selectedChoices: newChoices
+    });
+  }
   previousStep(event) {
     const { step } = this.state;
     this.setState({ step: step - 1 });
@@ -44,26 +50,30 @@ class MasterForm extends React.Component {
         </button>
       );
   }
-  showSubmitButton() {
-    const { step } = this.state;
-    if (step === this.numPages - 1) return <button></button>;
-  }
-  handleChoicesSubmit(event) {
-    event.preventDefault();
-  }
 
   render() {
-    const { step } = this.state;
+    const { step, selectedChoices } = this.state;
     const { categories } = this.props;
     return categories ? (
       <div id="mount">
+        {console.log(this.state.selectedChoices)}
         <h1 id="masterform-heading">OSCARS SURVEY</h1>
-        <CategoryDisplay category={categories[step]} />
+        {step + 1 !== this.numPages ? (
+          <h3>
+            {step + 1} of {this.numPages - 1}
+          </h3>
+        ) : (
+          <h5>done son</h5>
+        )}
+        <CategoryDisplay
+          category={categories[step]}
+          handleSelect={this.handleSelect}
+          selectedChoices={selectedChoices}
+        />
         <p>{step + 1}</p>
         <div id="btn-display">
           {this.showPrevButton()}
           {this.showNextButton()}
-          {this.showSubmitButton()}
         </div>
       </div>
     ) : null;
