@@ -12,7 +12,7 @@ class MasterForm extends React.Component {
     this.state = {
       user: '', //session user name
       choices: Array(24).map(() => null), //growing array of selected nominees (objs)
-      step: 24, //which step of the form (24/25 total)
+      step: 0, //which step of the form (24/25 total)
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.previousStep = this.previousStep.bind(this);
