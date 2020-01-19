@@ -1,24 +1,31 @@
-import React from "react";
-import FormButton from "./FormButton";
-import CategoryDisplay from "./NomineeDisplay";
+import React from 'react';
+import axios from 'axios';
+
+import FormButton from './FormButton';
+import CategoryDisplay from './NomineeDisplay';
+import Summary from './Summary';
 
 //might have to make this like a MasterForm component and then have app elsewhere for structure's sake
 class MasterForm extends React.Component {
   constructor() {
     super();
     this.state = {
-      user: "", //session user name
-      selectedChoices: [], //growing array of selected nominees (objs)
-      step: 1 //which step of the form (24/25 total)
+      user: '', //session user name
+      choices: Array(24).map(() => null), //growing array of selected nominees (objs)
+      step: 24, //which step of the form (24/25 total)
     };
-    this.handleChoicesSubmit = this.handleChoicesSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.previousStep = this.previousStep.bind(this);
     this.nextStep = this.nextStep.bind(this);
     this.numPages = 25;
   }
 
-  handleChoicesSubmit(event) {
-    event.preventDefault();
+  async handleSubmit(userName, email) {
+    const { data } = await axios.post('/api/users', {
+      choices: this.state.choices,
+      userName,
+      email,
+    });
   }
   previousStep(event) {
     event.preventDefault();
@@ -45,13 +52,20 @@ class MasterForm extends React.Component {
   }
 
   render() {
-    const { step } = this.state;
+    const { step, choices } = this.state;
     const { categories } = this.props;
     //categories here
     return categories ? (
       <div id="mount">
         <h1>test</h1>
         <CategoryDisplay category={categories[step]} />
+        {step === 24 && (
+          <Summary
+            choices={choices}
+            categories={categories}
+            handleSubmit={this.handleSubmit}
+          />
+        )}
       </div>
     ) : null;
   }
