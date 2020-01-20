@@ -70,7 +70,6 @@ class MasterForm extends React.Component {
           handleSelect={this.handleSelect}
           selectedChoices={selectedChoices}
         />
-        <p>{step + 1}</p>
         <div id="btn-display">
           {this.showPrevButton()}
           {this.showNextButton()}
