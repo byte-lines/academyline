@@ -46,7 +46,7 @@ class Summary extends React.Component {
           </button>
         </div>
       </div>
-    ) : null;
+    );
   }
 }
 
