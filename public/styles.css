@@ -1,7 +1,28 @@
+/* Marriage Story  --  https://www.kodak.com/Kodak/uploadedImages/Motion/InCamera/2019/11-November/MarriageStorySubway.jpg?n=4559 */
+/* 1917 -- https://assets1.ignimgs.com/2019/10/09/1280-1917-1570648311705.jpg */
+/* The Irishman -- https://www.motionpictures.org/wp-content/uploads/2019/11/the-irishman-netflix-TI_KS_072_rgb-1400x757.jpg */
+/* Joker -- https://filmschoolrejects.com/wp-content/uploads/2019/10/Joker-Call-Me.png */
 * {
   box-sizing: border-box;
 }
 
 .selected {
-    border: 2px red dotted
+    border: 2px gold dashed
+}
+#landing {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+
+
+}
+#welcome-heading {
+    margin-top: 32px;
+    color: black;
+    text-shadow: 3px 3px rgb(33, 33, 33);
+}
+#home-button {
+    width: 100px;
+    height: 50px;
+    font-weight: 800;
 }

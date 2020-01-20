@@ -62,6 +62,8 @@ class MasterForm extends React.Component {
     }
   }
 
+  //Custom components for categories[11, 14, 16, 22, 23]
+
   render() {
     const { step, choices } = this.state;
     const { categories } = this.props;

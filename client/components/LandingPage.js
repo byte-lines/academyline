@@ -4,8 +4,15 @@ import { withRouter } from "react-router-dom";
 const LandingPage = props => {
   return (
     <div id="landing">
-      <h1>Welcome Welcome</h1>
-      <button type="button" onClick={() => props.history.push("/survey")}>
+      <h1 id="welcome-heading" className="home-column">
+        Welcome to the Academyline
+      </h1>
+      <button
+        id="home-button"
+        className="home-column"
+        type="button"
+        onClick={() => props.history.push("/survey")}
+      >
         Take Survey
       </button>
     </div>
