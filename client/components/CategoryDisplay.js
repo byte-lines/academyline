@@ -2,7 +2,7 @@ import React from "react";
 import NomineeDisplay from "./NomineeDisplay";
 
 const CategoryDisplay = props => {
-  const { category, selectedChoices } = props;
+  const { category, choices } = props;
   return category ? (
     <React.Fragment>
       <div>
@@ -11,7 +11,7 @@ const CategoryDisplay = props => {
           return (
             <NomineeDisplay
               nominee={nominee}
-              className={selectedChoices.includes(nominee.id) ? "selected" : ""}
+              className={choices.includes(nominee.id) ? "selected" : ""}
               handleSelect={props.handleSelect}
             />
           );

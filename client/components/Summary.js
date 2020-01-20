@@ -1,17 +1,17 @@
-import React from 'react';
-import { withRouter } from 'react-router-dom';
+import React from "react";
+import { withRouter } from "react-router-dom";
 
 class Summary extends React.Component {
   constructor() {
     super();
-    this.state = { userName: '', email: '' };
+    this.state = { userName: "", email: "" };
 
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
     this.setState({
-      [event.target.name]: event.target.value,
+      [event.target.name]: event.target.value
     });
   }
 
@@ -46,7 +46,7 @@ class Summary extends React.Component {
           </button>
         </div>
       </div>
-    );
+    ) : null;
   }
 }
 
