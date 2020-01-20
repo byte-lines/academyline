@@ -1,8 +1,7 @@
-
-import React from 'react';
-import axios from 'axios';
-import CategoryDisplay from './CategoryDisplay';
-import Summary from './Summary';
+import React from "react";
+import axios from "axios";
+import CategoryDisplay from "./CategoryDisplay";
+import Summary from "./Summary";
 
 class MasterForm extends React.Component {
   constructor() {
@@ -19,12 +18,12 @@ class MasterForm extends React.Component {
     this.numPages = 25;
   }
 
-
   async handleSubmit(userName, email) {
-    const { data } = await axios.post('/api/users', {
+    const { data } = await axios.post("/api/users", {
       choices: this.state.choices,
       userName,
-      email,
+      email
+    });
   }
   handleSelect(nomineeId) {
     const { step, choices } = this.state;
