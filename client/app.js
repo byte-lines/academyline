@@ -10,7 +10,9 @@ class App extends React.Component {
       categories: [],
       choices: [],
     };
+
     this.handleSelect = this.handleSelect.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   async componentDidMount() {
@@ -39,6 +41,17 @@ class App extends React.Component {
     }
   }
 
+  async handleSubmit(userName, email) {
+    const { data } = await axios.post('/api/users', {
+      userName,
+      email,
+    });
+
+    this.setState({
+      user: data,
+    });
+  }
+
   render() {
     const categories = this.state.categories || [];
     const choices = this.state.choices || [];
@@ -49,6 +62,7 @@ class App extends React.Component {
           categories={categories}
           choices={choices}
           handleSelect={this.handleSelect}
+          handleSubmit={this.handleSubmit}
         />
       </div>
     );

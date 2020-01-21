@@ -10,18 +10,9 @@ class MasterForm extends React.Component {
       step: 0, //which step of the form (24/25 total)
     };
 
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.previousStep = this.previousStep.bind(this);
     this.nextStep = this.nextStep.bind(this);
     this.numPages = 25;
-  }
-
-  async handleSubmit(userName, email) {
-    const { data } = await axios.post('/api/users', {
-      choices: this.state.choices,
-      userName,
-      email,
-    });
   }
 
   previousStep() {
@@ -83,7 +74,7 @@ class MasterForm extends React.Component {
           <Summary
             choices={choices}
             categories={categories}
-            handleSubmit={this.handleSubmit}
+            handleSubmit={this.props.handleSubmit}
           />
         )}
 

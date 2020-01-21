@@ -7,7 +7,7 @@ import LandingPage from './components/LandingPage';
 class Routes extends React.Component {
   render() {
     const { categories, choices } = this.props;
-    const { handleSelect } = this.props;
+    const { handleSelect, handleSubmit } = this.props;
     return (
       <Switch>
         <Route
@@ -17,6 +17,7 @@ class Routes extends React.Component {
               categories={categories}
               choices={choices}
               handleSelect={handleSelect}
+              handleSubmit={handleSubmit}
             />
           )}
         />
