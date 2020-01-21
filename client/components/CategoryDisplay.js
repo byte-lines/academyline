@@ -1,5 +1,5 @@
-import React from "react";
-import NomineeDisplay from "./NomineeDisplay";
+import React from 'react';
+import NomineeDisplay from './NomineeDisplay';
 
 const CategoryDisplay = props => {
   const { category, choices } = props;
@@ -19,6 +19,7 @@ const CategoryDisplay = props => {
             );
           })}
         </div>
+
       </div>
     </React.Fragment>
   ) : null;
