@@ -19,13 +19,13 @@ class MasterForm extends React.Component {
   }
 
   async handleSubmit(userName, email) {
-    console.log(userName, email);
     const { data } = await axios.post('/api/users', {
       choices: this.state.choices,
       userName,
       email,
     });
   }
+
   handleSelect(nomineeId) {
     const { step, choices } = this.state;
     const newChoices = choices;
