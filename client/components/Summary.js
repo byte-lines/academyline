@@ -1,27 +1,38 @@
-import React from "react";
-import { withRouter } from "react-router-dom";
+import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class Summary extends React.Component {
   constructor() {
     super();
-    this.state = { userName: "", email: "" };
+    this.state = { userName: '', email: '' };
 
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   }
 
   render() {
-    const { choices, categories } = this.props;
+    const { choices } = this.props;
     const { userName, email } = this.state;
+
+    const categories = this.props.categories.map(category => {
+      category.choice = category.nominees.find(nominee =>
+        choices.includes(nominee.id)
+      );
+      return category;
+    });
+
     return (
       <div id="summary">
-        {choices.map(choice => (
-          <h2>{choice.name}</h2>
+        {categories.map(category => (
+          <h2 key={category.id}>
+            {category.name} ->
+            {category.choice && category.choice.name}
+          </h2>
         ))}
         <div id="final-submit">
           <label htmlFor="userName">User Name:</label>

@@ -1,5 +1,5 @@
-import React from "react";
-import NomineeDisplay from "./NomineeDisplay";
+import React from 'react';
+import NomineeDisplay from './NomineeDisplay';
 
 const CategoryDisplay = props => {
   const { category, choices } = props;
@@ -10,8 +10,9 @@ const CategoryDisplay = props => {
         {category.nominees.map(nominee => {
           return (
             <NomineeDisplay
+              key={nominee.id}
               nominee={nominee}
-              className={choices.includes(nominee.id) ? "selected" : ""}
+              className={choices.includes(nominee.id) ? 'selected' : ''}
               handleSelect={props.handleSelect}
             />
           );
