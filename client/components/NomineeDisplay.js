@@ -10,10 +10,8 @@ const NomineeDisplay = props => {
       className={"nominee-info " + props.className}
       onClick={() => props.handleSelect(nominee.id)}
     >
-      <div>{nominee.image || "image placeholder"}</div>
-      <div>
-        <strong>{nominee.name}</strong> for <i>{nominee.movie.title}</i>
-      </div>
+      <strong>{nominee.name}</strong>
+      <i>{nominee.movie.title}</i>
       <br />
     </div>
   ) : null;
