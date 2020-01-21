@@ -1,15 +1,15 @@
-import React from "react";
-import axios from "axios";
-import CategoryDisplay from "./CategoryDisplay";
-import Summary from "./Summary";
+import React from 'react';
+import axios from 'axios';
+import CategoryDisplay from './CategoryDisplay';
+import Summary from './Summary';
 
 class MasterForm extends React.Component {
   constructor() {
     super();
     this.state = {
-      user: "", //session user name
+      user: '', //session user name
       choices: Array(24).fill(null), //growing array of selected nominees (objs)
-      step: 0 //which step of the form (24/25 total)
+      step: 0, //which step of the form (24/25 total)
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
@@ -19,10 +19,11 @@ class MasterForm extends React.Component {
   }
 
   async handleSubmit(userName, email) {
-    const { data } = await axios.post("/api/users", {
+    console.log(userName, email);
+    const { data } = await axios.post('/api/users', {
       choices: this.state.choices,
       userName,
-      email
+      email,
     });
   }
   handleSelect(nomineeId) {
@@ -30,7 +31,7 @@ class MasterForm extends React.Component {
     const newChoices = choices;
     newChoices[step] = nomineeId;
     this.setState({
-      choices: newChoices
+      choices: newChoices,
     });
   }
   previousStep() {
@@ -75,20 +76,18 @@ class MasterForm extends React.Component {
             {step + 1} of {this.numPages - 1}
           </h3>
         ) : (
-          <h5>done son</h5>
-        )}
-        <CategoryDisplay
-          category={categories[step]}
-          handleSelect={this.handleSelect}
-          choices={choices}
-        />
-        {step === 24 && (
           <Summary
             choices={choices}
             categories={categories}
             handleSubmit={this.handleSubmit}
           />
         )}
+        <CategoryDisplay
+          category={categories[step]}
+          handleSelect={this.handleSelect}
+          choices={choices}
+        />
+
         <div id="btn-display">
           {this.showPrevButton()}
           {this.showNextButton()}
