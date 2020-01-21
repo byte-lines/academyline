@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const User = require('../db');
+const { User } = require('../db');
 module.exports = router;
 
 router.get('/me', (req, res, next) => {
@@ -20,15 +20,12 @@ router.post('/', async (req, res, next) => {
 
     const { categoryIndex, nomineeId } = req.body;
 
+    req.session.choices[categoryIndex] = nomineeId;
     if (req.user) {
       const user = await User.findByPk(req.user.id);
 
-      if (req.session.choices[categoryIndex]) {
-        await user.removeNominee(req.session.choices[categoryIndex]);
-      }
-      await user.setNominee(nomineeId);
+      await user.setNominees(req.session.choices.filter(choice => choice));
     }
-    req.session.choices[categoryIndex] = nomineeId;
 
     res.sendStatus(200);
   } catch (err) {
