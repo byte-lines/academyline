@@ -6,23 +6,119 @@
   box-sizing: border-box;
 }
 
-.selected {
-    border: 2px gold dashed
-}
+/* Landing Page Styling */
+
 #landing {
     display: flex;
     flex-flow: column wrap;
     align-content: center;
-
-
 }
+
 #welcome-heading {
-    margin-top: 32px;
-    color: black;
-    text-shadow: 3px 3px rgb(33, 33, 33);
+    color: rgb(250, 250, 250);
+    text-shadow: 3.5px 3.5px rgb(33, 33, 33);
+    position: absolute;
+    font-size: 40pt;
+    top: 8x;
+    left: 202.5px;
+    /* text-decoration: underline; */
 }
+
+.carousel-body {
+    margin-top: 72px;
+    width: 1200px;
+    height: 650px;
+}
+
+.carousel-imgs {
+    opacity: 100%;
+}
+
+/* .carousel-imgs:hover {
+    opacity: 75%;
+} flipped card animation to display brief bio and rating */
+
+.carousel-caption {
+    text-shadow: 2px 2px rgb(33, 33, 33);
+}
+
 #home-button {
     width: 100px;
     height: 50px;
     font-weight: 800;
+
+}
+
+.one {
+    opacity: 0;
+    -webkit-animation: dot 1.3s infinite;
+    -webkit-animation-delay: 0.0s;
+    animation: dot 1.3s infinite;
+    animation-delay: 0.0s;
+    color: blue;
+}
+
+.two {
+    opacity: 0;
+    -webkit-animation: dot 1.3s infinite;
+    -webkit-animation-delay: 0.15s;
+    animation: dot 1.3s infinite;
+    animation-delay: 0.2s;
+    color: yellow;
+}
+
+.three {
+    opacity: 0;
+    -webkit-animation: dot 1.3s infinite;
+    -webkit-animation-delay: 0.3s;
+    animation: dot 1.3s infinite;
+    animation-delay: 0.3s;
+    color: red;
+}
+
+@-webkit-keyframes dot {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes dot {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Category/Nominee Display Styling */
+
+.selected {
+    border: 2px gold dashed
+}
+
+#category-container {
+    display: inline-block;
+}
+
+.category-name {
+    color: lightcoral;
+}
+
+.category-display {
+
+}
+
+.nominee-info {
+    display: flex;
+    flex-flow: column wrap
 }

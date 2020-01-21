@@ -5,18 +5,21 @@ const CategoryDisplay = props => {
   const { category, choices } = props;
   return category ? (
     <React.Fragment>
-      <div>
-        <h3>{category.name}</h3>
-        {category.nominees.map(nominee => {
-          return (
-            <NomineeDisplay
-              key={nominee.id}
-              nominee={nominee}
-              className={choices.includes(nominee.id) ? 'selected' : ''}
-              handleSelect={props.handleSelect}
-            />
-          );
-        })}
+      <div id="category-container">
+        <div id="category-display">
+          <h2 className="category-name">{category.name}</h2>
+          {category.nominees.map(nominee => {
+            return (
+              <NomineeDisplay
+                key={nominee.id}
+                nominee={nominee}
+                className={choices.includes(nominee.id) ? "selected" : ""}
+                handleSelect={props.handleSelect}
+              />
+            );
+          })}
+        </div>
+
       </div>
     </React.Fragment>
   ) : null;
