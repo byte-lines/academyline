@@ -6,12 +6,19 @@ import LandingPage from './components/LandingPage';
 
 class Routes extends React.Component {
   render() {
-    const { categories } = this.props;
+    const { categories, choices } = this.props;
+    const { handleSelect } = this.props;
     return (
       <Switch>
         <Route
           path="/survey"
-          render={() => <MasterForm categories={categories} />}
+          render={() => (
+            <MasterForm
+              categories={categories}
+              choices={choices}
+              handleSelect={handleSelect}
+            />
+          )}
         />
         <Route component={LandingPage} />
       </Switch>
