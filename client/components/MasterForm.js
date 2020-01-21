@@ -45,8 +45,12 @@ class MasterForm extends React.Component {
     const { step } = this.state;
     if (step > 0 && step <= this.numPages) {
       return (
-        <button id="prev-button" onClick={() => this.previousStep()}>
-          Previous
+        <button
+          id="prev-button"
+          className="form-button"
+          onClick={() => this.previousStep()}
+        >
+          &#8592;
         </button>
       );
     }
@@ -55,8 +59,12 @@ class MasterForm extends React.Component {
     const { step } = this.state;
     if (step >= 0 && step < this.numPages) {
       return (
-        <button id="next-button" onClick={() => this.nextStep()}>
-          Next
+        <button
+          id="next-button"
+          className="form-button"
+          onClick={() => this.nextStep()}
+        >
+          &#8594;
         </button>
       );
     }
@@ -69,7 +77,13 @@ class MasterForm extends React.Component {
     const { categories } = this.props;
     return categories ? (
       <div id="mount">
-        <h1 id="masterform-heading">OSCARS SURVEY</h1>
+        {/* <h1 id="masterform-heading"></h1> */}
+
+        <CategoryDisplay
+          category={categories[step]}
+          handleSelect={this.handleSelect}
+          choices={choices}
+        />
         {step + 1 !== this.numPages ? (
           <h3>
             {step + 1} of {this.numPages - 1}
@@ -77,11 +91,6 @@ class MasterForm extends React.Component {
         ) : (
           <h5>done son</h5>
         )}
-        <CategoryDisplay
-          category={categories[step]}
-          handleSelect={this.handleSelect}
-          choices={choices}
-        />
         {step === 24 && (
           <Summary
             choices={choices}

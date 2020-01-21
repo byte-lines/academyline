@@ -20,7 +20,7 @@ const HomeCarousel = () => {
       <Carousel.Item className="carousel-imgs">
         <img
           height="650"
-          width="1400"
+          width="1200"
           src="https://www.kodak.com/Kodak/uploadedImages/Motion/InCamera/2019/11-November/MarriageStorySubway.jpg?n=4559"
         />
         <Carousel.Caption>
@@ -37,7 +37,7 @@ const HomeCarousel = () => {
       <Carousel.Item className="carousel-imgs">
         <img
           height="650"
-          width="1400"
+          width="1200"
           src="http://www.larsenonfilm.com/wp-content/uploads/2019/11/1917-review.jpg"
         />
         <Carousel.Caption>
@@ -54,7 +54,7 @@ const HomeCarousel = () => {
       <Carousel.Item className="carousel-imgs">
         <img
           height="650"
-          width="1400"
+          width="1200"
           src="https://www.motionpictures.org/wp-content/uploads/2019/11/the-irishman-netflix-TI_KS_072_rgb-1400x757.jpg"
         />
         <Carousel.Caption>
@@ -71,7 +71,7 @@ const HomeCarousel = () => {
       <Carousel.Item className="carousel-imgs">
         <img
           height="650"
-          width="1400"
+          width="1200"
           src="https://filmschoolrejects.com/wp-content/uploads/2019/10/Joker-Call-Me.png"
         />
         <Carousel.Caption>

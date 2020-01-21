@@ -6,9 +6,7 @@
   box-sizing: border-box;
 }
 
-.selected {
-    border: 2px gold dashed
-}
+/* Landing Page Styling */
 
 #landing {
     display: flex;
@@ -22,12 +20,14 @@
     position: absolute;
     font-size: 40pt;
     top: 8x;
-    left: 55px;
+    left: 202.5px;
     /* text-decoration: underline; */
 }
 
 .carousel-body {
     margin-top: 72px;
+    width: 1200px;
+    height: 650px;
 }
 
 .carousel-imgs {
@@ -98,4 +98,27 @@
     100% {
         opacity: 1;
     }
+}
+
+/* Category/Nominee Display Styling */
+
+.selected {
+    border: 2px gold dashed
+}
+
+#category-container {
+    display: inline-block;
+}
+
+.category-name {
+    color: lightcoral;
+}
+
+.category-display {
+
+}
+
+.nominee-info {
+    display: flex;
+    flex-flow: column wrap
 }

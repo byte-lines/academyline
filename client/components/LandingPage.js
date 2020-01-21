@@ -7,7 +7,7 @@ const LandingPage = props => {
     <div id="landing">
       <HomeCarousel />
       <h1 id="welcome-heading" className="home-column">
-        __Welcome_to_AcademyLine________________
+        _________Welcome_to_AcademyLine_________
       </h1>
       <button
         id="home-button"
