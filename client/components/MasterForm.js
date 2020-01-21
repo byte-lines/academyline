@@ -7,33 +7,14 @@ class MasterForm extends React.Component {
   constructor() {
     super();
     this.state = {
-      user: '', //session user name
-      choices: Array(24).fill(null), //growing array of selected nominees (objs)
       step: 0, //which step of the form (24/25 total)
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleSelect = this.handleSelect.bind(this);
+
     this.previousStep = this.previousStep.bind(this);
     this.nextStep = this.nextStep.bind(this);
     this.numPages = 25;
   }
 
-  async handleSubmit(userName, email) {
-    console.log(userName, email);
-    const { data } = await axios.post('/api/users', {
-      choices: this.state.choices,
-      userName,
-      email,
-    });
-  }
-  handleSelect(nomineeId) {
-    const { step, choices } = this.state;
-    const newChoices = choices;
-    newChoices[step] = nomineeId;
-    this.setState({
-      choices: newChoices,
-    });
-  }
   previousStep() {
     const { step } = this.state;
     this.setState({ step: step - 1 });
@@ -74,15 +55,15 @@ class MasterForm extends React.Component {
   //Custom components for categories[11, 14, 16, 22, 23]
 
   render() {
-    const { step, choices } = this.state;
-    const { categories } = this.props;
+    const { step } = this.state;
+    const { categories, choices } = this.props;
     return categories ? (
       <div id="mount">
         {/* <h1 id="masterform-heading"></h1> */}
 
         <CategoryDisplay
           category={categories[step]}
-          handleSelect={this.handleSelect}
+          handleSelect={nomineeId => this.props.handleSelect(step, nomineeId)}
           choices={choices}
         />
         {step + 1 !== this.numPages ? (
@@ -93,14 +74,9 @@ class MasterForm extends React.Component {
           <Summary
             choices={choices}
             categories={categories}
-            handleSubmit={this.handleSubmit}
+            handleSubmit={this.props.handleSubmit}
           />
         )}
-        <CategoryDisplay
-          category={categories[step]}
-          handleSelect={this.handleSelect}
-          choices={choices}
-        />
 
         <div id="btn-display">
           {this.showPrevButton()}

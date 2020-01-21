@@ -3,7 +3,7 @@ const { User } = require('../db');
 
 router.post('/', async (req, res, next) => {
   try {
-    const { choices, userName, email } = req.body;
+    const { userName, email } = req.body;
 
     //Check if User Name is valid
     const foundUser = await User.findOne({
@@ -15,17 +15,22 @@ router.post('/', async (req, res, next) => {
     //Check if email is valid
 
     // Create User
-    if (!foundUser) {
-      const newUser = await User.create({
+    if (!foundUser && !req.user) {
+      const user = await User.create({
         name: userName,
         email: email,
       });
 
-      await newUser.setNominees(choices.filter(val => val !== null));
-      res.send(newUser);
+      await user.setNominees(req.session.choices.filter(val => val !== null));
+
+      req.login(user, err => (err ? next(err) : res.json(user)));
     }
   } catch (err) {
-    next(err);
+    if (err.name === 'SequelizeUniqueConstraintError') {
+      res.status(401).send('User already exists');
+    } else {
+      next(err);
+    }
   }
 });
 
