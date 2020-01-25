@@ -5,6 +5,11 @@
 * {
   box-sizing: border-box;
 }
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
 
 /* Landing Page Styling */
 
@@ -106,19 +111,54 @@
     border: 2px gold dashed
 }
 
-#category-container {
-    display: inline-block;
+#survey-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+#category-name-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+#middle-line {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background-color: rgb(194, 44, 44);
+    transform: rotate(20deg)
+}
+
+#nominees-display {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100vh;
 }
 
 .category-name {
-    color: lightcoral;
-}
-
-.category-display {
+    color: rgb(194, 44, 44);
+    margin-left: 110px;
 
 }
-
 .nominee-info {
     display: flex;
-    flex-flow: column wrap
+    flex-flow: column wrap;
+    margin-left: 16px;
+    padding-left: 8px;
+}
+
+.movie-title {
+    color: rgb(194, 44, 44);
+    font-size: 24pt;
+}
+.nominee-name {
+    font-style: italic;
+    font-size: 18pt;
 }

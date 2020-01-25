@@ -1,27 +1,28 @@
-import React from 'react';
-import NomineeDisplay from './NomineeDisplay';
+import React from "react";
+import NomineeDisplay from "./NomineeDisplay";
 
 const CategoryDisplay = props => {
-  const { category, choices } = props;
+  const { category, choices, step, numPages } = props;
   return category ? (
-    <React.Fragment>
-      <div id="category-container">
-        <div id="category-display">
-          <h2 className="category-name">{category.name}</h2>
-          {category.nominees.map(nominee => {
-            return (
-              <NomineeDisplay
-                key={nominee.id}
-                nominee={nominee}
-                className={choices.includes(nominee.id) ? "selected" : ""}
-                handleSelect={props.handleSelect}
-              />
-            );
-          })}
-        </div>
-
+    <div id="survey-container">
+      <div id="category-name-display">
+        <h2 className="category-name">{category.name}</h2>
       </div>
-    </React.Fragment>
+      <span id="middle-line"></span>
+      <div id="nominees-display">
+        {category.nominees.map((nominee, idx) => {
+          return (
+            <NomineeDisplay
+              key={nominee.id}
+              idx={idx}
+              nominee={nominee}
+              className={choices.includes(nominee.id) ? "selected" : ""}
+              handleSelect={props.handleSelect}
+            />
+          );
+        })}
+      </div>
+    </div>
   ) : null;
 };
 
