@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 const TopBar = props => {
-  return <div></div>;
+  return <div id="top-bar"></div>;
 };
 
 export default TopBar;

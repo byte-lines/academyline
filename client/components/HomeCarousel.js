@@ -15,7 +15,7 @@ const HomeCarousel = props => {
   useEffect(() => {
     const interval = setInterval(() => {
       callback.current();
-    }, 5000);
+    }, 8000);
     return () => clearInterval(interval);
   }, []);
 

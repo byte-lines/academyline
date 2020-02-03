@@ -10,6 +10,17 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  background-color: #d76d6d;
+}
+
+#mount {
+  background-color: #f28d6851;
+}
+
+#top-bar {
+  height: 30px;
+  width: 100%;
+  background-color: #db3434;
 }
 
 /* Landing Page Styling */
@@ -25,20 +36,33 @@ body {
   font-size: 6rem;
   margin-top: -2rem;
   z-index: 3;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 #title {
   width: 50vw;
   z-index: 3;
+  margin-top: 2rem;
+  margin-left: 2rem;
 }
 
 #title .main,
 #title .year {
-  font-family: 'Avenir Black';
-  font-size: 10rem;
-  color: #fff;
+  letter-spacing: 2rem;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.406);
+  font-family: dunbar-low, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+#title .main {
+  font-size: 9rem;
+  color: #fff;
+}
+#title .year {
+  text-align: left;
+  margin-top: -20px;
+  font-size: 13.5rem;
+  color: #db3434;
 }
 
 #desktop-carousel {
@@ -56,14 +80,14 @@ body {
   height: 100vh;
 }
 
-/* #desktop-carousel .image-container:before {
+#desktop-carousel .image-container:before {
   position: absolute;
   content: ' ';
   height: 100%;
   width: 100%;
   z-index: 2;
-  xbackground-color: #ff110046;
-} */
+  background-color: #db343419;
+}
 
 #desktop-carousel .image-container img {
   height: 150vh;
@@ -107,11 +131,13 @@ body {
   width: 200px;
   height: 60px;
   border-radius: 25pt;
-  color: #e61404;
+  color: #db3434;
   background-color: #fff;
   border: none;
   font-weight: 800;
   position: absolute;
+  right: 2rem;
+  bottom: 2rem;
   z-index: 100;
 }
 

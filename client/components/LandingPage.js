@@ -22,15 +22,15 @@ const LandingPage = props => {
       <div id="title">
         <h1 className="main">OSCARS</h1>
         <h1 className="year">'19</h1>
-        <button
-          id="home-button"
-          className="home-column"
-          type="button"
-          onClick={() => props.history.push('/survey')}
-        >
-          Take Survey
-        </button>
       </div>
+      <button
+        id="home-button"
+        className="home-column"
+        type="button"
+        onClick={() => props.history.push('/survey')}
+      >
+        Take Survey
+      </button>
     </div>
   );
 };
