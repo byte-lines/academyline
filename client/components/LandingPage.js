@@ -4,7 +4,17 @@ import { withRouter } from 'react-router-dom';
 import { isMobile } from 'react-device-detect';
 
 const LandingPage = props => {
-  const imageUrls = [];
+  const imageUrls = [
+    'movies/ford.jpg',
+    'movies/irishman.jpg',
+    'movies/jojo.jpg',
+    'movies/joker.jpg',
+    'movies/marr.jpg',
+    'movies/nin.jpg',
+    'movies/onceupon.jpg',
+    'movies/parasite.jpg',
+    'movies/uncut.jpg',
+  ];
 
   return (
     <div id="landing">
