@@ -19,14 +19,18 @@ const LandingPage = props => {
   return (
     <div id="landing">
       {!isMobile && <HomeCarousel imageUrls={imageUrls} />}
-      <button
-        id="home-button"
-        className="home-column"
-        type="button"
-        onClick={() => props.history.push('/survey')}
-      >
-        Take Survey
-      </button>
+      <div id="title">
+        <h1 className="main">OSCARS</h1>
+        <h1 className="year">'19</h1>
+        <button
+          id="home-button"
+          className="home-column"
+          type="button"
+          onClick={() => props.history.push('/survey')}
+        >
+          Take Survey
+        </button>
+      </div>
     </div>
   );
 };

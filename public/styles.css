@@ -15,12 +15,8 @@ body {
 /* Landing Page Styling */
 
 #landing {
-  background-color: #e61404;
-  position: relative;
-  margin-top: 20px;
+  width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 #welcome-heading {
@@ -32,37 +28,49 @@ body {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+#title {
+  width: 50vw;
+  z-index: 3;
+}
+
+#title .main,
+#title .year {
+  font-family: 'Avenir Black';
+  font-size: 50rem;
+  color: #fff;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.406);
+}
+
 #desktop-carousel {
+  order: 3;
   position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  width: 50%;
+  height: 100%;
+  right: 0;
 }
 
 #desktop-carousel .image-container {
   position: relative;
   overflow: hidden;
-  width: 25vw;
-  height: 42vw;
-  margin: 2px;
+  width: 50vw;
+  height: 100vh;
 }
 
-#desktop-carousel .image-container img {
-  filter: grayscale(1);
-}
-
-#desktop-carousel .image-container:before {
+/* #desktop-carousel .image-container:before {
   position: absolute;
   content: ' ';
   height: 100%;
   width: 100%;
   z-index: 2;
   xbackground-color: #ff110046;
-}
+} */
 
 #desktop-carousel .image-container img {
-  width: 25vw;
+  min-height: 150vh;
+  min-width: 50vw;
+  top: -25vh;
   position: absolute;
+  right: 0;
 }
 
 #desktop-carousel .image-container img.img2 {
@@ -70,7 +78,8 @@ body {
 }
 
 .right {
-  right: 25vw;
+  right: 100vw;
+  z-index: -1;
 }
 
 .center {
@@ -81,12 +90,12 @@ body {
   z-index: 1;
   animation: move;
   animation-timing-function: ease-out;
-  animation-duration: 0.5s;
+  animation-duration: 1s;
 }
 
 @keyframes move {
   from {
-    transform: translateX(25vw);
+    transform: translateX(100vw);
   }
 
   to {
