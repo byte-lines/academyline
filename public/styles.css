@@ -19,7 +19,7 @@ body {
 
 #top-bar {
   height: 30px;
-  width: 100%;
+  width: 100vw;
   background-color: #db3434;
 }
 
@@ -117,6 +117,13 @@ body {
   animation-duration: 1s;
 }
 
+.unload {
+  animation: slideOut;
+  animation-timing-function: ease-out;
+  animation-duration: 0.5s;
+  transform: translateX(-110vw);
+}
+
 @keyframes move {
   from {
     transform: translateX(100vw);
@@ -124,6 +131,16 @@ body {
 
   to {
     transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-110vw);
   }
 }
 
