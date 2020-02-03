@@ -1,5 +1,5 @@
-import React from "react";
-import NomineeDisplay from "./NomineeDisplay";
+import React from 'react';
+import NomineeDisplay from './NomineeDisplay';
 
 const CategoryDisplay = props => {
   const { category, choices, step, numPages } = props;
@@ -8,7 +8,7 @@ const CategoryDisplay = props => {
       <div id="category-name-display">
         <h2 className="category-name">{category.name}</h2>
       </div>
-      <span id="middle-line"></span>
+      {/* <span id="middle-line"></span> */}
       <div id="nominees-display">
         {category.nominees.map((nominee, idx) => {
           return (
@@ -16,7 +16,7 @@ const CategoryDisplay = props => {
               key={nominee.id}
               idx={idx}
               nominee={nominee}
-              className={choices.includes(nominee.id) ? "selected" : ""}
+              className={choices.includes(nominee.id) ? 'selected' : ''}
               handleSelect={props.handleSelect}
             />
           );
