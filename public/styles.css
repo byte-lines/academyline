@@ -14,12 +14,12 @@ body {
 }
 
 #mount {
-  background-color: #f28d6851;
+  background-color: #f28d680b;
 }
 
 #top-bar {
   height: 30px;
-  width: 100vw;
+  width: 100%;
   background-color: #db3434;
 }
 
