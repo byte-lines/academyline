@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 import Routes from './routes';
+import TopBar from './components/TopBar';
 class App extends React.Component {
   constructor() {
     super();
@@ -58,6 +59,7 @@ class App extends React.Component {
 
     return (
       <div id="mount">
+        <TopBar />
         <Routes
           categories={categories}
           choices={choices}
