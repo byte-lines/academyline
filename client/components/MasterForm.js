@@ -32,7 +32,7 @@ class MasterForm extends React.Component {
           className="form-button"
           onClick={() => this.previousStep()}
         >
-          &#8592;
+          <span>Prev </span>
         </button>
       );
     }
@@ -46,7 +46,7 @@ class MasterForm extends React.Component {
           className="form-button"
           onClick={() => this.nextStep()}
         >
-          &#8594;
+          <span>Next </span>
         </button>
       );
     }
@@ -60,19 +60,21 @@ class MasterForm extends React.Component {
     return categories ? (
       <div id="mount">
         {/* <h1 id="masterform-heading"></h1> */}
-
-        <CategoryDisplay
-          category={categories[step]}
-          handleSelect={nomineeId => this.props.handleSelect(step, nomineeId)}
-          choices={choices}
-          step={step}
-          numPages={this.numPages}
-        />
         {step + 1 !== this.numPages ? (
           <div>
-            <h3>
-              {step + 1} of {this.numPages - 1}
-            </h3>
+            <div id="btn-display">
+              <div className="prev-button-container">
+                {this.showPrevButton()}
+              </div>
+              <div className="next-button-container">
+                {this.showNextButton()}
+              </div>
+            </div>
+            <div id="step-number">
+              <h3>
+                {step + 1} of {this.numPages - 1}
+              </h3>
+            </div>
           </div>
         ) : (
           // </div>
@@ -82,10 +84,14 @@ class MasterForm extends React.Component {
             handleSubmit={this.props.handleSubmit}
           />
         )}
-        <div id="btn-display">
-          {this.showPrevButton()}
-          {this.showNextButton()}
-        </div>
+
+        <CategoryDisplay
+          category={categories[step]}
+          handleSelect={nomineeId => this.props.handleSelect(step, nomineeId)}
+          choices={choices}
+          step={step}
+          numPages={this.numPages}
+        />
       </div>
     ) : null;
   }
