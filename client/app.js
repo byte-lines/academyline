@@ -59,7 +59,6 @@ class App extends React.Component {
 
     return (
       <div id="mount">
-        <TopBar />
         <Routes
           categories={categories}
           choices={choices}
