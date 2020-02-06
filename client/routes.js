@@ -24,7 +24,13 @@ class Routes extends React.Component {
         />
         <Route
           path="/summary"
-          render={() => <Summary categories={categories} choices={choices} />}
+          render={() => (
+            <Summary
+              categories={categories}
+              choices={choices}
+              handleSubmit={handleSubmit}
+            />
+          )}
         />
         <Route component={LandingPage} />
       </Switch>
