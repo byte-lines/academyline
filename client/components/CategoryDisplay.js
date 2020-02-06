@@ -1,8 +1,12 @@
-import React from 'react';
-import NomineeDisplay from './NomineeDisplay';
+import React from "react";
+import NomineeDisplay from "./NomineeDisplay";
+import Custom11Display from "./Custom11Display";
+import Summary from "./Summary";
+// import Custom14Display from "./Custom14Display";
 
 const CategoryDisplay = props => {
-  const { category, choices, step, numPages } = props;
+  const { category, categories, choices, step, numPages } = props;
+  const customSteps = [11, 14, 15, 16, 22, 23];
   return category ? (
     <div id="survey-container">
       <div id="category-name-display">
@@ -11,12 +15,46 @@ const CategoryDisplay = props => {
       {/* <span id="middle-line"></span> */}
       <div id="nominees-display">
         {category.nominees.map((nominee, idx) => {
-          return (
+          return step === 11 ? (
+            <Custom11Display
+              key={nominee.id}
+              idx={idx}
+              step={step}
+              nominee={nominee}
+              className={choices.includes(nominee.id) ? "selected" : ""}
+              handleSelect={props.handleSelect}
+            />
+          ) : step === 14 ? (
+            // <Custom14Display
+            //   key={nominee.id}
+            //   idx={idx}
+            //   step={step}
+            //   nominee={nominee}
+            //   className={choices.includes(nominee.id) ? "selected" : ""}
+            //   handleSelect={props.handleSelect}
+            // />
+            "suh"
+          ) : step === 16 ? (
+            // <Custom16Display
+            //   key={nominee.id}
+            //   idx={idx}
+            //   step={step}
+            //   nominee={nominee}
+            //   className={choices.includes(nominee.id) ? "selected" : ""}
+            //   handleSelect={props.handleSelect}
+            // />
+            "suhhh"
+          ) : step === 22 ? (
+            "22"
+          ) : step === 23 ? (
+            "23"
+          ) : (
             <NomineeDisplay
               key={nominee.id}
               idx={idx}
+              step={step}
               nominee={nominee}
-              className={choices.includes(nominee.id) ? 'selected' : ''}
+              className={choices.includes(nominee.id) ? "selected" : ""}
               handleSelect={props.handleSelect}
             />
           );

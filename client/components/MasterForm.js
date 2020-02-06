@@ -7,7 +7,7 @@ class MasterForm extends React.Component {
   constructor() {
     super();
     this.state = {
-      step: 0 //which step of the form (24/25 total)
+      step: 0 //indicates which step of the form (24/25 total)
     };
 
     this.previousStep = this.previousStep.bind(this);
@@ -37,6 +37,7 @@ class MasterForm extends React.Component {
       );
     }
   }
+
   showNextButton() {
     const { step } = this.state;
     if (step >= 0 && step < this.numPages) {
