@@ -16,9 +16,11 @@ class MasterForm extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({
-      step: +this.props.history.location.hash.slice(1)
-    });
+    if (this.props.history.location.hash) {
+      this.setState({
+        step: +this.props.history.location.hash.slice(1) - 1
+      });
+    }
   }
 
   previousStep() {
