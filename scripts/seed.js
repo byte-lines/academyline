@@ -37,7 +37,7 @@ async function seed() {
   ]);
 
   const movies = await Promise.all([
-    Movie.create({ title: "Pain and Glory", country: "Spain" }),
+    Movie.create({ title: "Pain and Glory", country: "(Spain)" }),
     Movie.create({ title: "Once Upon A Time...In Hollywood" }),
     Movie.create({ title: "Marriage Story" }),
     Movie.create({ title: "Joker" }),
@@ -57,22 +57,22 @@ async function seed() {
     Movie.create({ title: "Toy Story 4" }),
     Movie.create({ title: "The Lighthouse" }),
     Movie.create({ title: "1917" }),
-    Movie.create({ title: "Parasite", country: "South Korea" }),
+    Movie.create({ title: "Parasite", country: "(South Korea)" }),
     Movie.create({ title: "American Factory" }),
     Movie.create({ title: "The Cave" }),
     Movie.create({ title: "The Edge of Democracy" }),
     Movie.create({ title: "For Sama" }),
-    Movie.create({ title: "Honeyland", country: "North Macedonia" }),
+    Movie.create({ title: "Honeyland", country: "(North Macedonia)" }),
     Movie.create({ title: "In the Absence" }),
     Movie.create({
-      title: "Learning to Skateboard in a Warzone (If You're A Girl)"
+      title: ""
     }),
     Movie.create({ title: "Life Overtakes Me" }),
     Movie.create({ title: "St. Louis Superman" }),
     Movie.create({ title: "Walk Run Cha-Cha" }),
     Movie.create({ title: "Ford V Ferrari" }),
-    Movie.create({ title: "Corpus Christi", country: "Poland" }),
-    Movie.create({ title: "Les Misérables", country: "France" }),
+    Movie.create({ title: "Corpus Christi", country: "(Poland)" }),
+    Movie.create({ title: "Les Misérables", country: "(France)" }),
     Movie.create({ title: "Maleficent: Mistress of Evil" }),
     Movie.create({ title: "Star Wars: The Rise of Skywalker" }),
     Movie.create({ title: "Rocketman" }),
@@ -91,7 +91,10 @@ async function seed() {
     Movie.create({ title: "Ad Astra" }),
     Movie.create({ title: "Avengers: Endgame" }),
     Movie.create({ title: "The Lion King" }),
-    Movie.create({ title: "Knives Out" })
+    Movie.create({ title: "Knives Out" }),
+    Movie.create({
+      title: "Learning to Skateboard in a Warzone\n(If You're A Girl)"
+    })
   ]);
 
   const nominees = await Promise.all([
@@ -325,11 +328,7 @@ async function seed() {
       categoryId: categories[9].id,
       movieId: movies[26].id
     }),
-    Nominee.create({
-      name: "Carol Dysinger and Elena Andreicheva",
-      categoryId: categories[9].id,
-      movieId: movies[27].id
-    }),
+
     Nominee.create({
       name: "John Haptas and Kristine Samuelson",
       categoryId: categories[9].id,
@@ -344,6 +343,11 @@ async function seed() {
       name: "Laura Nix and Colette Sandstedt",
       categoryId: categories[9].id,
       movieId: movies[30].id
+    }),
+    Nominee.create({
+      name: "Carol Dysinger and Elena Andreicheva",
+      categoryId: categories[9].id,
+      movieId: movies[53].id
     }),
     Nominee.create({
       name: "Michael McCusker and Andrew Buckland",
@@ -388,7 +392,7 @@ async function seed() {
     Nominee.create({
       name: "Pedro Almodóvar",
       categoryId: categories[11].id,
-      movieId: movies[1].id
+      movieId: movies[0].id
     }),
     Nominee.create({
       name: "Bong Joon Ho",
@@ -647,7 +651,7 @@ async function seed() {
     }),
     Nominee.create({
       name:
-        "Pablo Helman, Leandro Estebecorena, Nelson Sepulveda-Fauser and Stephane Grabli",
+        "Pablo Helman, Leandro Estebecorena,\nNelson Sepulveda-Fauser and Stephane Grabli",
       categoryId: categories[21].id,
       movieId: movies[6].id
     }),
