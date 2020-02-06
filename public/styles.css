@@ -206,7 +206,7 @@ body {
 #prev-button span {
   position: relative;
   -webkit-transition: 0.5s;
-  transition: 0.5s
+  transition: 0.5s;
 }
 #prev-button span:after {
   content: '\00ab';
@@ -218,7 +218,7 @@ body {
   transition: 0.5s;
 }
 #prev-button:hover span {
-padding-left: 25px;
+  padding-left: 25px;
 }
 #prev-button:hover span:after {
   opacity: 1;
