@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import TopBar from './TopBar';
 
 class Summary extends React.Component {
   constructor() {
@@ -27,36 +28,47 @@ class Summary extends React.Component {
     });
 
     return (
-      <div id="summary">
-        {categories.map(category => (
-          <h2 key={category.id}>
-            {category.name} ->
-            {category.choice && category.choice.name}
-          </h2>
-        ))}
-        <div id="final-submit">
-          <label htmlFor="userName">User Name:</label>
-          <input
-            type="text"
-            value={this.state.userName}
-            name="userName"
-            onChange={this.handleChange}
-          />
-          <label htmlFor="email">Email:</label>
-          <input
-            type="text"
-            value={this.state.email}
-            name="email"
-            onChange={this.handleChange}
-          />
-          <button
-            type="button"
-            onClick={() => this.props.handleSubmit(userName, email)}
-          >
-            Submit
-          </button>
+      <React.Fragment>
+        <TopBar />
+        <div id="summary">
+          <div id="summary-list">
+            {categories.map(category => (
+              <div key={category.id} className="summary-row">
+                <h1 className="nominee">
+                  {category.choice && category.choice.name}
+                </h1>
+                <div>
+                  <p>{category.choice && category.choice.movie.title}</p>
+                  <p>{category.name}</p>
+                </div>
+                <h4>100%</h4>
+              </div>
+            ))}
+          </div>
+          <div id="final-submit">
+            <label htmlFor="userName">User Name:</label>
+            <input
+              type="text"
+              value={this.state.userName}
+              name="userName"
+              onChange={this.handleChange}
+            />
+            <label htmlFor="email">Email:</label>
+            <input
+              type="text"
+              value={this.state.email}
+              name="email"
+              onChange={this.handleChange}
+            />
+            <button
+              type="button"
+              onClick={() => this.props.handleSubmit(userName, email)}
+            >
+              Submit
+            </button>
+          </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
