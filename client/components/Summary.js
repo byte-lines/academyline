@@ -32,19 +32,26 @@ class Summary extends React.Component {
         <TopBar />
         <div id="summary">
           <div id="summary-list">
-            {categories.map(category => (
-              <div key={category.id} className="summary-row">
-                <h1 className="nominee">
-                  {category.choice && category.choice.name}
-                </h1>
-                <div>
-                  <p>{category.choice && category.choice.movie.title}</p>
+            {categories.map(category => {
+              return category.choice ? (
+                <div key={category.id} className="summary-row">
+                  <h1 className="nominee">
+                    {category.choice && category.choice.name}
+                  </h1>
+                  <div>
+                    <p>{category.choice && category.choice.movie.title}</p>
+                    <p>{category.name}</p>
+                  </div>
+                  <h4>100%</h4>
+                </div>
+              ) : (
+                <div key={category.id} className="summary-row unselected">
                   <p>{category.name}</p>
                 </div>
-                <h4>100%</h4>
-              </div>
-            ))}
+              );
+            })}
           </div>
+
           <div id="final-submit">
             <label htmlFor="userName">User Name:</label>
             <input

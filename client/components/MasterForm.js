@@ -21,7 +21,6 @@ class MasterForm extends React.Component {
   }
   nextStep() {
     const { step } = this.state;
-    console.log(step);
     if (step + 2 === this.numPages) {
       this.props.history.push('/summary');
     } else {
