@@ -14,6 +14,9 @@ const Movie = db.define("movie", {
   },
   trailerLink: {
     type: Sequelize.STRING
+  },
+  originalSong: {
+    type: Sequelize.STRING
   }
 });
 

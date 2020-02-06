@@ -354,18 +354,31 @@ body {
 
 .movie-title {
   color: #fff;
-  font-size: 18pt;
+  font-size: 20pt;
   font-weight: 800;
   transform: skewX(20deg);
-  
 }
 .nominee-name {
-  font-size: 16pt;
+  font-weight: 225;
+  font-size: 18pt;
   transform: skewX(20deg);
 }
 h5 span {
   font-size: 16pt;
 
+}
+.original-song {
+  font-size: 18pt;
+}
+.conjunction-span {
+  color: #212529;
+  font-size: 12pt;
+  font-weight: 150;
+
+}
+.nom-info-desc {
+  font-weight: 100;
+  font-size: 12pt;
 }
 
 /* SUMMARY */

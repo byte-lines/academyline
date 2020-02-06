@@ -4,7 +4,11 @@ const Custom11Display = props => {
   const { nominee, idx, step } = props;
   return nominee ? (
     <div
-      className={props.className + " nominee-info"}
+      className={
+        idx === 0
+          ? props.className + " nominee-info" + "1"
+          : props.className + " nominee-info"
+      }
       onClick={() => props.handleSelect(nominee.id)}
       // style={{ marginRight: marginLight + 'rem' }}
     >

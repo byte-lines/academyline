@@ -1,8 +1,7 @@
 import React from "react";
 import NomineeDisplay from "./NomineeDisplay";
 import Custom11Display from "./Custom11Display";
-import Summary from "./Summary";
-// import Custom14Display from "./Custom14Display";
+import Custom14Display from "./Custom14Display";
 
 const CategoryDisplay = props => {
   const { category, categories, choices, step, numPages } = props;
@@ -25,15 +24,14 @@ const CategoryDisplay = props => {
               handleSelect={props.handleSelect}
             />
           ) : step === 14 ? (
-            // <Custom14Display
-            //   key={nominee.id}
-            //   idx={idx}
-            //   step={step}
-            //   nominee={nominee}
-            //   className={choices.includes(nominee.id) ? "selected" : ""}
-            //   handleSelect={props.handleSelect}
-            // />
-            "suh"
+            <Custom14Display
+              key={nominee.id}
+              idx={idx}
+              step={step}
+              nominee={nominee}
+              className={choices.includes(nominee.id) ? "selected" : ""}
+              handleSelect={props.handleSelect}
+            />
           ) : step === 16 ? (
             // <Custom16Display
             //   key={nominee.id}

@@ -44,7 +44,7 @@ async function seed() {
     Movie.create({ title: "The Two Popes" }),
     Movie.create({ title: "A Beautiful Day in the Neighborhood" }),
     Movie.create({ title: "The Irishman" }),
-    Movie.create({ title: "Harriet" }),
+    Movie.create({ title: "Harriet", originalSong: "Stand Up" }),
     Movie.create({ title: "Little Women" }),
     Movie.create({ title: "Bombshell" }),
     Movie.create({ title: "Judy" }),
@@ -54,7 +54,10 @@ async function seed() {
     Movie.create({ title: "I Lost My Body" }),
     Movie.create({ title: "Klaus" }),
     Movie.create({ title: "Missing Link" }),
-    Movie.create({ title: "Toy Story 4" }),
+    Movie.create({
+      title: "Toy Story 4",
+      originalSong: "I Can't Let You Throw Yourself Away"
+    }),
     Movie.create({ title: "The Lighthouse" }),
     Movie.create({ title: "1917" }),
     Movie.create({ title: "Parasite", country: "(South Korea)" }),
@@ -75,9 +78,15 @@ async function seed() {
     Movie.create({ title: "Les Misérables", country: "(France)" }),
     Movie.create({ title: "Maleficent: Mistress of Evil" }),
     Movie.create({ title: "Star Wars: The Rise of Skywalker" }),
-    Movie.create({ title: "Rocketman" }),
-    Movie.create({ title: "Breakthrough" }),
-    Movie.create({ title: "Frozen II" }),
+    Movie.create({
+      title: "Rocketman",
+      originalSong: "(I'm Gonna) Love Me Again"
+    }),
+    Movie.create({
+      title: "Breakthrough",
+      originalSong: "I'm Standing With You"
+    }),
+    Movie.create({ title: "Frozen II", originalSong: "Into The Unknown" }),
     Movie.create({ title: "Dcera" }),
     Movie.create({ title: "Hair Love" }),
     Movie.create({ title: "Kitbull" }),
@@ -455,7 +464,7 @@ async function seed() {
       movieId: movies[17].id
     }),
     Nominee.create({
-      name: "Elton John",
+      name: "Elton John+Bernie Taupin",
       categoryId: categories[14].id,
       movieId: movies[36].id
     }),
