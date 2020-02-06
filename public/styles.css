@@ -298,10 +298,8 @@ body {
   flex-direction: column;
   height: 100vh;
   background-color: #cc4d4d;
-  xborder-left: #cc4d4d 2px solid;
   transform: skewX(-20deg);
   width: 80%;
-
   box-shadow: 10px 10px 8px #888888;
 }
 
@@ -317,13 +315,21 @@ body {
 }
 
 .category-name {
+  position: relative;
+  bottom: 244px;
   color: rgb(194, 44, 44);
-  margin-left: 110px;
+  margin-left: 45px;
+  
 }
 .nominee-info {
   position: relative;
-  margin: 0;
-  padding: 8px 8px;
+  padding: 10px 10px;
+}
+.nominee-info1 {
+  position: relative;
+  margin-top: 100px;
+  padding: 10px 10px;
+
 }
 
 .nominee-info::after {
@@ -348,13 +354,18 @@ body {
 
 .movie-title {
   color: #fff;
-  font-size: 24pt;
+  font-size: 18pt;
+  font-weight: 800;
   transform: skewX(20deg);
+  
 }
 .nominee-name {
-  font-style: italic;
-  font-size: 18pt;
+  font-size: 16pt;
   transform: skewX(20deg);
+}
+h5 span {
+  font-size: 16pt;
+
 }
 
 /* SUMMARY */

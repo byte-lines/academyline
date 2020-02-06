@@ -8,10 +8,10 @@ const Custom11Display = props => {
       onClick={() => props.handleSelect(nominee.id)}
       // style={{ marginRight: marginLight + 'rem' }}
     >
-      <h4 className="movie-title">
-        {nominee.movie.title}, <span>{nominee.movie.country}</span>
-      </h4>
-      <h5 className="nominee-name">{nominee.name}</h5>
+      <h4 className="movie-title">{nominee.movie.title}</h4>
+      <h5 className="nominee-name">
+        {nominee.name} <span>{nominee.movie.country}</span>
+      </h5>
     </div>
   ) : null;
 };
