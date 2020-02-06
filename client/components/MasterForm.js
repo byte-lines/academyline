@@ -1,13 +1,13 @@
-import React from "react";
-import axios from "axios";
-import CategoryDisplay from "./CategoryDisplay";
-import Summary from "./Summary";
+import React from 'react';
+import axios from 'axios';
+import { withRouter } from 'react-router-dom';
+import CategoryDisplay from './CategoryDisplay';
 
 class MasterForm extends React.Component {
   constructor() {
     super();
     this.state = {
-      step: 0 //which step of the form (24/25 total)
+      step: 0, //which step of the form (24/25 total)
     };
 
     this.previousStep = this.previousStep.bind(this);
@@ -21,7 +21,12 @@ class MasterForm extends React.Component {
   }
   nextStep() {
     const { step } = this.state;
-    this.setState({ step: step + 1 });
+    console.log(step);
+    if (step + 2 === this.numPages) {
+      this.props.history.push('/summary');
+    } else {
+      this.setState({ step: step + 1 });
+    }
   }
   showPrevButton() {
     const { step } = this.state;
@@ -77,12 +82,7 @@ class MasterForm extends React.Component {
             </div>
           </div>
         ) : (
-          // </div>
-          <Summary
-            choices={choices}
-            categories={categories}
-            handleSubmit={this.props.handleSubmit}
-          />
+          ''
         )}
 
         <CategoryDisplay
@@ -97,4 +97,4 @@ class MasterForm extends React.Component {
   }
 }
 
-export default MasterForm;
+export default withRouter(MasterForm);
