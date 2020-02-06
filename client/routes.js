@@ -3,6 +3,7 @@ import { withRouter, Route, Switch } from 'react-router-dom';
 
 import MasterForm from './components/MasterForm';
 import LandingPage from './components/LandingPage';
+import Summary from './components/Summary';
 
 class Routes extends React.Component {
   render() {
@@ -20,6 +21,10 @@ class Routes extends React.Component {
               handleSubmit={handleSubmit}
             />
           )}
+        />
+        <Route
+          path="/summary"
+          render={() => <Summary categories={categories} choices={choices} />}
         />
         <Route component={LandingPage} />
       </Switch>
