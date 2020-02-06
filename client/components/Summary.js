@@ -8,6 +8,7 @@ class Summary extends React.Component {
     this.state = { userName: '', email: '' };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleChange(event) {
@@ -16,6 +17,10 @@ class Summary extends React.Component {
     });
   }
 
+  handleClick(categoryId) {
+    const categoryIds = this.props.categories.map(category => category.id);
+    this.props.history.push(`/survey#${categoryIds.indexOf(categoryId) + 1}`);
+  }
   render() {
     const { choices } = this.props;
     const { userName, email } = this.state;
@@ -34,7 +39,11 @@ class Summary extends React.Component {
           <div id="summary-list">
             {categories.map(category => {
               return category.choice ? (
-                <div key={category.id} className="summary-row">
+                <div
+                  key={category.id}
+                  className="summary-row"
+                  onClick={() => this.handleClick(category.id)}
+                >
                   <h1 className="nominee">
                     {category.choice && category.choice.name}
                   </h1>
@@ -45,7 +54,11 @@ class Summary extends React.Component {
                   <h4>100%</h4>
                 </div>
               ) : (
-                <div key={category.id} className="summary-row unselected">
+                <div
+                  key={category.id}
+                  className="summary-row unselected"
+                  onClick={() => this.handleClick(category.id)}
+                >
                   <p>{category.name}</p>
                 </div>
               );
