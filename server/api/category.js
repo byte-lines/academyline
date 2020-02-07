@@ -1,7 +1,7 @@
-const router = require("express").Router();
-const { Category, Nominee, Movie } = require("../db");
+const router = require('express').Router();
+const { Category, Nominee, Movie, User } = require('../db');
 
-router.get("/", async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const categories = await Category.findAll({
       include: [
@@ -9,11 +9,14 @@ router.get("/", async (req, res) => {
           model: Nominee,
           include: [
             {
-              model: Movie
-            }
-          ]
-        }
-      ]
+              model: Movie,
+            },
+            {
+              model: User,
+            },
+          ],
+        },
+      ],
     });
 
     res.json(categories);

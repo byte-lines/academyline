@@ -14,7 +14,6 @@ router.post('/', async (req, res, next) => {
   try {
     //   Create choices on session
     if (!req.session.choices) {
-      console.log('new session');
       req.session.choices = Array(24).fill(null);
     }
 
@@ -23,8 +22,8 @@ router.post('/', async (req, res, next) => {
     req.session.choices[categoryIndex] = nomineeId;
     if (req.user) {
       const user = await User.findByPk(req.user.id);
-
-      await user.setNominees(req.session.choices.filter(choice => choice));
+      const choices = req.session.choices.filter(choice => choice);
+      await user.setNominees(choices);
     }
 
     res.sendStatus(200);

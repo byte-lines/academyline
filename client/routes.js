@@ -7,7 +7,7 @@ import Summary from './components/Summary';
 
 class Routes extends React.Component {
   render() {
-    const { categories, choices } = this.props;
+    const { categories, choices, user } = this.props;
     const { handleSelect, handleSubmit } = this.props;
     return (
       <Switch>
@@ -28,6 +28,7 @@ class Routes extends React.Component {
             <Summary
               categories={categories}
               choices={choices}
+              user={user}
               handleSubmit={handleSubmit}
             />
           )}

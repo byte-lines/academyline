@@ -1,7 +1,8 @@
 const router = require('express').Router();
 module.exports = router;
 
-// API ROUTES GO HERE
+// API ROUTES
+
 router.use('/category', require('./category'));
 router.use('/users', require('./users'));
 router.use('/choices', require('./choices'));

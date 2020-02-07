@@ -6,7 +6,8 @@ router.post('/', async (req, res, next) => {
     const { userName, email } = req.body;
 
     //Check if User Name is valid
-    const foundUser = await User.findOne({
+
+    let user = await User.findOne({
       where: {
         name: userName,
       },
@@ -15,16 +16,16 @@ router.post('/', async (req, res, next) => {
     //Check if email is valid
 
     // Create User
-    if (!foundUser && !req.user) {
-      const user = await User.create({
+    if (!user && !req.user) {
+      user = await User.create({
         name: userName,
         email: email,
       });
-
-      await user.setNominees(req.session.choices.filter(val => val !== null));
-
-      req.login(user, err => (err ? next(err) : res.json(user)));
     }
+    const choices = req.session.choices.filter(val => val !== null);
+    await user.setNominees(choices);
+
+    req.login(user, err => (err ? next(err) : res.json(user)));
   } catch (err) {
     if (err.name === 'SequelizeUniqueConstraintError') {
       res.status(401).send('User already exists');

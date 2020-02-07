@@ -20,8 +20,9 @@ const LandingPage = props => {
   const [unload, triggerUnload] = useState(false);
 
   const changePage = newPage => {
-    triggerUnload(true);
-    setTimeout(() => props.history.push(newPage), 800);
+    // triggerUnload(true);
+    // setTimeout(() => props.history.push(newPage), 800);
+    props.history.push(newPage);
   };
 
   return (
@@ -35,7 +36,7 @@ const LandingPage = props => {
         </div>
         <button
           id="home-button"
-          className="home-column"
+          className="next-button"
           type="button"
           onClick={() => changePage('/survey')}
         >
