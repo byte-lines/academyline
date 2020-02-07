@@ -1,14 +1,14 @@
-import React from 'react';
-import axios from 'axios';
+import React from "react";
+import axios from "axios";
 
-import Routes from './routes';
+import Routes from "./routes";
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
       user: {},
       categories: [],
-      choices: [],
+      choices: []
     };
 
     this.handleSelect = this.handleSelect.bind(this);
@@ -17,13 +17,14 @@ class App extends React.Component {
   }
 
   async refresh() {
-    const me = await axios.get('/auth/me');
-    const choices = await axios.get('/api/choices/me');
-    const categories = await axios.get('/api/category');
+    const me = await axios.get("/auth/me");
+    const choices = await axios.get("/api/choices/me");
+    let categories = await axios.get("/api/category");
+
     this.setState({
-      categories: categories.data,
+      categories: categories.data.sort((a, b) => a.pseudoId - b.pseudoId),
       user: me.data,
-      choices: choices.data,
+      choices: choices.data
     });
   }
 
@@ -33,7 +34,7 @@ class App extends React.Component {
 
   async handleSelect(step, nomineeId) {
     try {
-      await axios.post('/api/choices', { categoryIndex: step, nomineeId });
+      await axios.post("/api/choices", { categoryIndex: step, nomineeId });
       await this.refresh();
     } catch (err) {
       console.log(err);
@@ -41,13 +42,13 @@ class App extends React.Component {
   }
 
   async handleSubmit(userName, email) {
-    const { data } = await axios.post('/api/users', {
+    const { data } = await axios.post("/api/users", {
       userName,
-      email,
+      email
     });
 
     this.setState({
-      user: data,
+      user: data
     });
   }
 
