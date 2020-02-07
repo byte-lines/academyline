@@ -4,6 +4,7 @@ import { withRouter, Route, Switch } from 'react-router-dom';
 import MasterForm from './components/MasterForm';
 import LandingPage from './components/LandingPage';
 import Summary from './components/Summary';
+import Compare from './components/Compare';
 
 class Routes extends React.Component {
   render() {
@@ -31,6 +32,12 @@ class Routes extends React.Component {
               user={user}
               handleSubmit={handleSubmit}
             />
+          )}
+        />
+        <Route
+          path="/compare"
+          render={() => (
+            <Compare categories={categories} choices={choices} user={user} />
           )}
         />
         <Route component={LandingPage} />
