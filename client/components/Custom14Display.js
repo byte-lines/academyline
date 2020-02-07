@@ -23,7 +23,7 @@ export const Custom14Display = props => {
       {uniqueCase.length ? (
         <h5 className="nominee-name">
           <span className="nom-info-desc">Music by</span> {uniqueCase[0]}
-          <span className="nom-info-desc">, Lyric by</span> {uniqueCase[1]}
+          <span className={"nom-info-desc"}>, Lyric by</span> {uniqueCase[1]}
         </h5>
       ) : (
         <h5 className="nominee-name">
