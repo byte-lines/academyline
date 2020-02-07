@@ -152,12 +152,27 @@ body {
   color: #db3434;
   background-color: #fff;
   border: none;
-  font-weight: 800;
+  font-weight: 600;
+  font-size: 40pt;
+  text-align: center;
   position: absolute;
+  /* line-height: 0; */
   right: 2rem;
   bottom: 2rem;
   z-index: 100;
+  outline: none;
 }
+#home-button span {
+  position: relative;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  bottom: 15px;
+}
+#home-button:hover span{
+  margin-left: 40px;
+  
+}
+
 
 /* Button and step-through styling on Master Form */
 
@@ -193,6 +208,7 @@ body {
   text-align: center;
   padding: 7px;
   box-shadow: 3px 3px #ae2727;
+  outline: none;
 }
 .form-button:hover {
   cursor: pointer;
@@ -224,6 +240,12 @@ body {
 #prev-button:hover span:after {
   opacity: 1;
   left: 0;
+}
+#prev-button {
+  outline: none;
+}
+#next-button {
+  outline: none;
 }
 
 /* NEXT BUTTON */
