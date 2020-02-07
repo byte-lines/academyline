@@ -374,11 +374,13 @@ h5 span {
   color: #212529;
   font-size: 12pt;
   font-weight: 150;
+  color: rgb(41, 41, 41);
 
 }
 .nom-info-desc {
   font-weight: 100;
   font-size: 12pt;
+  color: rgb(41, 41, 41);
 }
 
 /* SUMMARY */

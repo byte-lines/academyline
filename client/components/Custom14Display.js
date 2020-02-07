@@ -17,7 +17,7 @@ export const Custom14Display = props => {
       // style={{ marginRight: marginLight + 'rem' }}
     >
       <h4 className="movie-title">
-        <span className="original-song">{nominee.movie.originalSong}</span>{" "}
+        <span className="original-song">'{nominee.movie.originalSong}'</span>{" "}
         <span className="conjunction-span"> from </span>
         {nominee.movie.title}
       </h4>

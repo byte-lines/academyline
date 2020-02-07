@@ -1,7 +1,5 @@
 import React from "react";
 
-//movie vs person logic
-
 const NomineeDisplay = props => {
   const { nominee, idx, step } = props;
   return nominee ? (
