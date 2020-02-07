@@ -14,7 +14,6 @@ export const Custom14Display = props => {
           : props.className + " nominee-info"
       }
       onClick={() => props.handleSelect(nominee.id)}
-      // style={{ marginRight: marginLight + 'rem' }}
     >
       <h4 className="movie-title">
         <span className="original-song">'{nominee.movie.originalSong}'</span>{" "}

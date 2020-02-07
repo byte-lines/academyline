@@ -329,7 +329,18 @@ body {
   position: relative;
   margin-top: 100px;
   padding: 10px 10px;
-
+}
+.nominee-info-BMPoY1 {
+  margin: 0;
+  position: relative;
+  margin-top: 25px;
+  padding-left: 10px;
+}
+.nominee-info-BMPoY {
+  margin: 0;
+  position: relative;
+  margin-top: 25px;
+  padding-left: 10px;
 }
 
 .nominee-info::after {
@@ -361,6 +372,19 @@ body {
 .nominee-name {
   font-weight: 225;
   font-size: 18pt;
+  transform: skewX(20deg);
+}
+.movie-title-BMPoY {
+  margin: 0;
+  color: #fff;
+  font-size: 13pt;
+  font-weight: 800;
+  transform: skewX(20deg);
+}
+.nominee-name-BMPoY {
+  margin: 0;
+  font-weight: 225;
+  font-size: 11pt;
   transform: skewX(20deg);
 }
 h5 span {
