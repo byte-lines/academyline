@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 
 import Routes from './routes';
-import TopBar from './components/TopBar';
 class App extends React.Component {
   constructor() {
     super();
@@ -14,9 +13,10 @@ class App extends React.Component {
 
     this.handleSelect = this.handleSelect.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.refresh = this.refresh.bind(this);
   }
 
-  async componentDidMount() {
+  async refresh() {
     const me = await axios.get('/auth/me');
     const choices = await axios.get('/api/choices/me');
     const categories = await axios.get('/api/category');
@@ -27,16 +27,14 @@ class App extends React.Component {
     });
   }
 
+  async componentDidMount() {
+    await this.refresh();
+  }
+
   async handleSelect(step, nomineeId) {
     try {
       await axios.post('/api/choices', { categoryIndex: step, nomineeId });
-      const { choices } = this.state;
-
-      const newChoices = choices;
-      newChoices[step] = nomineeId;
-      this.setState({
-        choices: newChoices,
-      });
+      await this.refresh();
     } catch (err) {
       console.log(err);
     }
@@ -56,12 +54,13 @@ class App extends React.Component {
   render() {
     const categories = this.state.categories || [];
     const choices = this.state.choices || [];
-
+    const user = this.state.user || {};
     return (
       <div id="mount">
         <Routes
           categories={categories}
           choices={choices}
+          user={user}
           handleSelect={this.handleSelect}
           handleSubmit={this.handleSubmit}
         />
