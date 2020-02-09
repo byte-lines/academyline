@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
-import HomeCarousel from './HomeCarousel';
-import TopBar from './TopBar';
-import { withRouter } from 'react-router-dom';
-import { isMobile } from 'react-device-detect';
+import React, { useState } from "react";
+import HomeCarousel from "./HomeCarousel";
+import TopBar from "./TopBar";
+import { withRouter } from "react-router-dom";
+import { isMobile } from "react-device-detect";
 
 const LandingPage = props => {
   const imageUrls = [
-    'movies/ford.jpg',
-    'movies/irishman.jpg',
-    'movies/jojo.jpg',
-    'movies/joker.jpg',
-    'movies/marr.jpg',
-    'movies/nin.jpg',
-    'movies/onceupon.jpg',
-    'movies/parasite.jpg',
-    'movies/uncut.jpg',
-    'movies/littlewomen.png',
+    "movies/ford.jpg",
+    "movies/irishman.jpg",
+    "movies/jojo.jpg",
+    "movies/joker.jpg",
+    "movies/marr.jpg",
+    "movies/nin.jpg",
+    "movies/onceupon.jpg",
+    "movies/parasite.jpg",
+    "movies/uncut.jpg",
+    "movies/littlewomen.png"
   ];
 
   for (let i = imageUrls.length - 1; i > 0; i--) {
@@ -30,11 +30,11 @@ const LandingPage = props => {
   };
 
   const { logout, user } = props;
-
+  console.log(user);
   return (
     <React.Fragment>
       <TopBar logout={logout} user={user} />
-      <div id="landing" className={''}>
+      <div id="landing" className={""}>
         {!isMobile && <HomeCarousel imageUrls={imageUrls} />}
         <div id="title">
           <h1 className="main">OSCARS</h1>
@@ -44,7 +44,7 @@ const LandingPage = props => {
           id="home-button"
           className="next-button"
           type="button"
-          onClick={() => changePage('/survey')}
+          onClick={() => changePage("/survey")}
         >
           <span id="take-survey-arrow">&#10230;</span>
         </button>

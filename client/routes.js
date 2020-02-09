@@ -1,11 +1,11 @@
-import React from 'react';
-import { withRouter, Route, Switch } from 'react-router-dom';
+import React from "react";
+import { withRouter, Route, Switch } from "react-router-dom";
 
-import MasterForm from './components/MasterForm';
-import LandingPage from './components/LandingPage';
-import Summary from './components/Summary';
-import Compare from './components/Compare';
-import Leaderboard from './components/Leaderboad';
+import MasterForm from "./components/MasterForm";
+import LandingPage from "./components/LandingPage";
+import Summary from "./components/Summary";
+import Compare from "./components/Compare";
+import Leaderboard from "./components/Leaderboad";
 
 class Routes extends React.Component {
   render() {
@@ -49,7 +49,7 @@ class Routes extends React.Component {
             <Leaderboard categories={categories} user={user} logout={logout} />
           )}
         />
-        <Route component={LandingPage} logout={logout} user={user} />
+        <Route render={() => <LandingPage logout={logout} user={user} />} />
       </Switch>
     );
   }
