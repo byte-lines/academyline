@@ -1,5 +1,5 @@
-import React from 'react';
-import { withRouter } from 'react-router-dom';
+import React from "react";
+import { withRouter } from "react-router-dom";
 
 const SummaryList = props => {
   const { categories } = props;
@@ -28,7 +28,9 @@ const SummaryList = props => {
               <p>{category.choice && category.choice.movie.title}</p>
               <p>{category.name}</p>
             </div>
-            <h4>{`${(category.choice.users.length / totalAnswers) * 100}%`}</h4>
+            <h4>{`${Math.round(
+              (category.choice.users.length / totalAnswers) * 100
+            )}%`}</h4>
           </div>
         ) : (
           <div
