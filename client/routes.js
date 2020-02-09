@@ -21,6 +21,7 @@ class Routes extends React.Component {
               choices={choices}
               handleSelect={handleSelect}
               handleSubmit={handleSubmit}
+              user={user}
             />
           )}
         />
@@ -48,7 +49,7 @@ class Routes extends React.Component {
             <Leaderboard categories={categories} user={user} logout={logout} />
           )}
         />
-        <Route component={LandingPage} logout={logout} />
+        <Route component={LandingPage} logout={logout} user={user} />
       </Switch>
     );
   }
