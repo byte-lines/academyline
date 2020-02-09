@@ -36,15 +36,25 @@ class Leaderboard extends React.Component {
       <React.Fragment>
         <TopBar />
         <div id="leaderboard">
-          <h1>Leaderboard</h1>
-          {users.map(user => {
-            return (
-              <div className="leaderboard-row" key={user.id}>
-                <h3>{user.name}</h3>
-                <h3>{user.numCorrect}</h3>
-              </div>
-            );
-          })}
+          <div className="list-header">
+            <h1>Leaderboard</h1>
+          </div>
+          <div id="leaderboard-list">
+            <div className="leaderboard-row">
+              <h3 className="place">Place</h3>
+              <h3 className="name">Name</h3>
+              <h3 className="correct"># Correct</h3>
+            </div>
+            {users.map((user, i) => {
+              return (
+                <div className="leaderboard-row" key={user.id}>
+                  <h3 className="place">#{i + 1}</h3>
+                  <h3 className="name">{user.name}</h3>
+                  <h3 className="correct">{user.numCorrect}</h3>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </React.Fragment>
     );

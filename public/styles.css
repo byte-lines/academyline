@@ -537,3 +537,49 @@ h5 span {
 .summary-row:hover .nominee {
   text-decoration: underline;
 }
+
+#leaderboard {
+  height: calc(100vh - 30px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #d76d6d38;
+}
+
+.list-header {
+  width: 80%;
+  margin-top: 1rem;
+  background-color: #db3434;
+  color: #fff;
+  font-family: dunbar-low, sans-serif;
+  text-align: center;
+}
+
+.list-header h1 {
+  font-size: 5rem;
+}
+
+#leaderboard-list {
+  border: 2px solid #db3434;
+  width: 80%;
+  background-color: #fff;
+  overflow: scroll;
+}
+
+.leaderboard-row {
+  display: grid;
+  grid-template-columns: 2fr 10fr 4fr;
+  width: 100%;
+}
+
+.leaderboard-row h3 {
+  padding: 5px;
+  font-family: dunbar-low, sans-serif;
+  font-size: 3rem;
+}
+
+.leaderboard-row h3.place,
+.leaderboard-row h3.correct {
+  text-align: center;
+}
