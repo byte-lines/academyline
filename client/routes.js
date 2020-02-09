@@ -34,12 +34,12 @@ class Routes extends React.Component {
             />
           )}
         />
-        <Route
+        {/* <Route
           path="/compare"
           render={() => (
             <Compare categories={categories} choices={choices} user={user} />
           )}
-        />
+        /> */}
         <Route component={LandingPage} />
       </Switch>
     );
