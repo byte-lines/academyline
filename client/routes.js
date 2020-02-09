@@ -5,11 +5,12 @@ import MasterForm from './components/MasterForm';
 import LandingPage from './components/LandingPage';
 import Summary from './components/Summary';
 import Compare from './components/Compare';
+import Leaderboard from './components/Leaderboad';
 
 class Routes extends React.Component {
   render() {
     const { categories, choices, user } = this.props;
-    const { handleSelect, handleSubmit } = this.props;
+    const { handleSelect, handleSubmit, logout } = this.props;
     return (
       <Switch>
         <Route
@@ -31,6 +32,7 @@ class Routes extends React.Component {
               choices={choices}
               user={user}
               handleSubmit={handleSubmit}
+              logout={logout}
             />
           )}
         />
@@ -40,7 +42,13 @@ class Routes extends React.Component {
             <Compare categories={categories} choices={choices} user={user} />
           )}
         /> */}
-        <Route component={LandingPage} />
+        <Route
+          path="/leaderboard"
+          render={() => (
+            <Leaderboard categories={categories} user={user} logout={logout} />
+          )}
+        />
+        <Route component={LandingPage} logout={logout} />
       </Switch>
     );
   }
