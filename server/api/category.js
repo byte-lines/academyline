@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Category, Nominee, Movie, User } = require('../db');
+const { Op } = require('sequelize');
 
 router.get('/', async (req, res) => {
   try {

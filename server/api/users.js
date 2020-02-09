@@ -1,9 +1,15 @@
 const router = require('express').Router();
 const { User, Nominee } = require('../db');
+const { Op } = require('sequelize');
 
 router.get('/', async (req, res, next) => {
   try {
     const users = await User.findAll({
+      where: {
+        name: {
+          [Op.not]: process.env.SNEEKYSNEEK,
+        },
+      },
       exclude: ['email', 'ipAddress'],
       include: [
         {

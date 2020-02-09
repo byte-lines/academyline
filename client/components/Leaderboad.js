@@ -26,7 +26,6 @@ class Leaderboard extends React.Component {
 
   render() {
     const users = this.state.users || [];
-    console.log(users);
     return (
       <div id="leaderboard">
         {users.map(user => {
