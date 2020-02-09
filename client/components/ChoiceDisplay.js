@@ -14,7 +14,9 @@ const ChoiceDisplay = props => {
         <p>{category.choice && category.choice.movie.title}</p>
         <p>{category.name}</p>
       </div>
-      <h4>{`${(category.choice.users.length / totalAnswers) * 100}%`}</h4>
+      <h4>
+        {`${Math.round((100 * category.choice.users.length) / totalAnswers)}%`}
+      </h4>
     </div>
   );
 };
