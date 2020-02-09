@@ -5,3 +5,4 @@ public/bundle.js.map
 .vscode
 .DS_Store
 npm-debug.log
+secrets.js
