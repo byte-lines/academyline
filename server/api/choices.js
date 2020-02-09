@@ -31,7 +31,11 @@ router.post('/', async (req, res, next) => {
         await user.setNominees(choices);
         if (req.user.name === process.env.SNEEKYSNEEK) {
           const nominees = await Nominee.findAll();
-
+          console.log(`
+          
+          answer posted
+          
+          `);
           nominees.forEach(nominee => {
             if (choices.includes(nominee.id)) {
               nominee.winner = true;

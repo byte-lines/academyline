@@ -367,17 +367,18 @@ body {
 .nominee-info-BMPoY1 {
   margin: 0;
   position: relative;
-  margin-top: 25px;
-  padding-left: 10px;
+  padding: 10px;
+  margin-top: 30px;
 }
 .nominee-info-BMPoY {
   margin: 0;
   position: relative;
-  margin-top: 25px;
-  padding-left: 10px;
+  padding: 10px;
 }
 
-.nominee-info::after {
+.nominee-info::after,
+.nominee-info-BMPoY::after,
+.nominee-info-BMPoY1::after {
   z-index: -1;
   content: '';
   position: absolute;
@@ -388,16 +389,19 @@ body {
   background-color: #cc4d4d;
 }
 
+.nominee-info-BMPoY1:hover:after,
+.nominee-info-BMPoY:hover:after,
+.nominee-info-BMPoY1:hover,
+.nominee-info-BMPoY:hover,
 .nominee-info:hover:after,
-.nominee-info1:hover:after {
-  background-color: #c23939;
-}
-
+.nominee-info1:hover:after,
 .nominee-info:hover,
 .nominee-info1:hover {
   background-color: #c23939;
 }
 
+.nominee-info-BMPoY1.selected:after,
+.nominee-info-BMPoY.selected:after,
 .nominee-info.selected:after,
 .nominee-info:active:after {
   z-index: -1;
@@ -406,7 +410,9 @@ body {
 
 .selected,
 .selected:hover,
-.nominee-info:active {
+.nominee-info:active,
+.nominee-info-BMPoY1:active,
+.nominee-info-BMPoY:active {
   background-color: #d76d6d;
 }
 
