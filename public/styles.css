@@ -168,11 +168,9 @@ body {
   -webkit-transition: 0.5s;
   bottom: 16px;
 }
-#home-button:hover span{
+#home-button:hover span {
   margin-left: 40px;
-  
 }
-
 
 /* Button and step-through styling on Master Form */
 
@@ -352,6 +350,7 @@ body {
   margin-top: 100px;
   padding: 10px 10px;
 }
+
 .nominee-info-BMPoY1 {
   margin: 0;
   position: relative;
@@ -376,12 +375,25 @@ body {
   background-color: #cc4d4d;
 }
 
-.nominee-info.selected:after {
+.nominee-info:hover:after,
+.nominee-info1:hover:after {
+  background-color: #c23939;
+}
+
+.nominee-info:hover,
+.nominee-info1:hover {
+  background-color: #c23939;
+}
+
+.nominee-info.selected:after,
+.nominee-info:active:after {
   z-index: -1;
   background-color: #d76d6d;
 }
 
-.selected {
+.selected,
+.selected:hover,
+.nominee-info:active {
   background-color: #d76d6d;
 }
 
@@ -448,10 +460,10 @@ h5 span {
   margin-bottom: 24px;
 }
 #submit-container {
-  display: "flex";
-  justify-content: "center";
-  align-items: "center";
-  flex-direction: "column";
+  display: 'flex';
+  justify-content: 'center';
+  align-items: 'center';
+  flex-direction: 'column';
   padding: 20;
   width: 500px;
   height: 400px;
@@ -465,7 +477,6 @@ h5 span {
   left: 150px;
 }
 /* SUMMARYLIST */
-
 
 #summary,
 #compare {
