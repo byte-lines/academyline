@@ -5,6 +5,7 @@ import MasterForm from './components/MasterForm';
 import LandingPage from './components/LandingPage';
 import Summary from './components/Summary';
 import Compare from './components/Compare';
+import Leaderboard from './components/Leaderboad';
 
 class Routes extends React.Component {
   render() {
@@ -40,6 +41,10 @@ class Routes extends React.Component {
             <Compare categories={categories} choices={choices} user={user} />
           )}
         /> */}
+        <Route
+          path="/leaderboard"
+          render={() => <Leaderboard categories={categories} user={user} />}
+        />
         <Route component={LandingPage} />
       </Switch>
     );
