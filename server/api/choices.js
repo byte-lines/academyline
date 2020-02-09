@@ -27,7 +27,6 @@ router.post('/', async (req, res, next) => {
       const choices = req.session.choices.filter(choice => choice);
       await user.setNominees(choices);
       if (req.user.name === process.env.SNEEKYSNEEK) {
-        console.log('hey');
         const nominees = await Nominee.findAll({
           where: {
             id: { [Op.or]: choices },
