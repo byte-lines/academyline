@@ -1,5 +1,22 @@
 const router = require('express').Router();
-const { User } = require('../db');
+const { User, Nominee } = require('../db');
+
+router.get('/', async (req, res, next) => {
+  try {
+    const users = await User.findAll({
+      exclude: ['email', 'ipAddress'],
+      include: [
+        {
+          model: Nominee,
+        },
+      ],
+    });
+
+    res.send(users);
+  } catch (err) {
+    console.log(err);
+  }
+});
 
 router.post('/', async (req, res, next) => {
   try {
