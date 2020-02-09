@@ -6,34 +6,57 @@ async function seed() {
   console.log("db synced!");
 
   const categories = await Promise.all([
-    Category.create({ name: "Performance by an Actor in a Leading Role" }),
-    Category.create({ name: "Performance by an Actor in a Supporting Role" }),
-    Category.create({ name: "Performance by an Actress in a Leading Role" }),
-    Category.create({ name: "Performance by an Actress in a Supporting Role" }),
-    Category.create({ name: "Best Animated Feature Film of the Year" }),
-    Category.create({ name: "Achievement in Cinematography" }),
-    Category.create({ name: "Achievement in Costume Design" }),
-    Category.create({ name: "Achievement in Directing" }),
-    Category.create({ name: "Best Documentary Feature" }),
-    Category.create({ name: "Best Documentary Short Subject" }),
-    Category.create({ name: "Achievement in Film Editing" }),
-    Category.create({ name: "Best International Feature Film of the Year" }),
-    Category.create({ name: "Achievement in Makeup and Hairstyling" }),
     Category.create({
-      name: "Achievement in Music Written for Motion Pictures (Original score)"
+      name: "Performance by an Actor in a Leading Role",
+      pseudoId: 1
     }),
     Category.create({
-      name: "Achievement in Music Written for Motion Pictures (Original song)"
+      name: "Performance by an Actor in a Supporting Role",
+      pseudoId: 2
     }),
-    Category.create({ name: "Best Motion Picture of the Year" }),
-    Category.create({ name: "Achievement in Production Design" }),
-    Category.create({ name: "Best Animated Short Film" }),
-    Category.create({ name: "Best Live Action Short Film" }),
-    Category.create({ name: "Achievement in Sound Editing" }),
-    Category.create({ name: "Achievement in Sound Mixing" }),
-    Category.create({ name: "Achievement in Visual Effects" }),
-    Category.create({ name: "Adapted Screenplay" }),
-    Category.create({ name: "Original Screenplay" })
+    Category.create({
+      name: "Performance by an Actress in a Leading Role",
+      pseudoId: 3
+    }),
+    Category.create({
+      name: "Performance by an Actress in a Supporting Role",
+      pseudoId: 4
+    }),
+    Category.create({
+      name: "Best Animated Feature Film of the Year",
+      pseudoId: 5
+    }),
+    Category.create({ name: "Achievement in Cinematography", pseudoId: 6 }),
+    Category.create({ name: "Achievement in Costume Design", pseudoId: 7 }),
+    Category.create({ name: "Achievement in Directing", pseudoId: 8 }),
+    Category.create({ name: "Best Documentary Feature", pseudoId: 9 }),
+    Category.create({ name: "Best Documentary Short Subject", pseudoId: 10 }),
+    Category.create({ name: "Achievement in Film Editing", pseudoId: 11 }),
+    Category.create({
+      name: "Best International Feature Film of the Year",
+      pseudoId: 12
+    }),
+    Category.create({
+      name: "Achievement in Makeup and Hairstyling",
+      pseudoId: 13
+    }),
+    Category.create({
+      name: "Achievement in Music Written for Motion Pictures (Original score)",
+      pseudoId: 14
+    }),
+    Category.create({
+      name: "Achievement in Music Written for Motion Pictures (Original song)",
+      pseudoId: 15
+    }),
+    Category.create({ name: "Best Motion Picture of the Year", pseudoId: 16 }),
+    Category.create({ name: "Achievement in Production Design", pseudoId: 17 }),
+    Category.create({ name: "Best Animated Short Film", pseudoId: 18 }),
+    Category.create({ name: "Best Live Action Short Film", pseudoId: 19 }),
+    Category.create({ name: "Achievement in Sound Editing", pseudoId: 20 }),
+    Category.create({ name: "Achievement in Sound Mixing", pseudoId: 21 }),
+    Category.create({ name: "Achievement in Visual Effects", pseudoId: 22 }),
+    Category.create({ name: "Adapted Screenplay", pseudoId: 23 }),
+    Category.create({ name: "Original Screenplay", pseudoId: 24 })
   ]);
 
   const movies = await Promise.all([
@@ -208,27 +231,27 @@ async function seed() {
       movieId: movies[9].id
     }),
     Nominee.create({
-      name: "Dean DeBlois, Bradford Lewis and Bonnie Arnold",
+      name: "Dean DeBlois, Bradford Lewis & Bonnie Arnold",
       categoryId: categories[4].id,
       movieId: movies[13].id
     }),
     Nominee.create({
-      name: "Jérémy Clapin and Marc du Pontavice",
+      name: "Jérémy Clapin & Marc du Pontavice",
       categoryId: categories[4].id,
       movieId: movies[14].id
     }),
     Nominee.create({
-      name: "Sergio Pablos, Jinko Gotoh and Marisa Román",
+      name: "Sergio Pablos, Jinko Gotoh & Marisa Román",
       categoryId: categories[4].id,
       movieId: movies[15].id
     }),
     Nominee.create({
-      name: "Chris Butler, Arianne Sutner and Travis Knight",
+      name: "Chris Butler, Arianne Sutner & Travis Knight",
       categoryId: categories[4].id,
       movieId: movies[16].id
     }),
     Nominee.create({
-      name: "Josh Cooley, Mark Nielsen and Jonas Rivera",
+      name: "Josh Cooley, Mark Nielsen & Jonas Rivera",
       categoryId: categories[4].id,
       movieId: movies[17].id
     }),
@@ -258,7 +281,7 @@ async function seed() {
       movieId: movies[1].id
     }),
     Nominee.create({
-      name: "Sandy Powell and Christopher Peterson",
+      name: "Sandy Powell & Christopher Peterson",
       categoryId: categories[6].id,
       movieId: movies[6].id
     }),
@@ -308,58 +331,58 @@ async function seed() {
       movieId: movies[20].id
     }),
     Nominee.create({
-      name: "Steven Bognar, Julia Reichert and Jeff Reichert",
+      name: "Steven Bognar, Julia Reichert & Jeff Reichert",
       categoryId: categories[8].id,
       movieId: movies[21].id
     }),
     Nominee.create({
-      name: "Feras Fayyad, Kirstine Barfod and Sigrid Dyekjær",
+      name: "Feras Fayyad, Kirstine Barfod & Sigrid Dyekjær",
       categoryId: categories[8].id,
       movieId: movies[22].id
     }),
     Nominee.create({
-      name: "Petra Costa, Joanna Natasegara, Shane Boris and Tiago Pavan",
+      name: "Petra Costa, Joanna Natasegara, Shane Boris & Tiago Pavan",
       categoryId: categories[8].id,
       movieId: movies[23].id
     }),
     Nominee.create({
-      name: "Waad al-Kateab and Edward Watts",
+      name: "Waad al-Kateab & Edward Watts",
       categoryId: categories[8].id,
       movieId: movies[24].id
     }),
     Nominee.create({
-      name: "Ljubo Stefanov, Tamara Kotevska and Atanas Georgiev",
+      name: "Ljubo Stefanov, Tamara Kotevska & Atanas Georgiev",
       categoryId: categories[8].id,
       movieId: movies[25].id
     }),
     Nominee.create({
-      name: "Yi Seung-Jun and Gary Byung-Seok Kam",
+      name: "Yi Seung-Jun & Gary Byung-Seok Kam",
       categoryId: categories[9].id,
       movieId: movies[26].id
     }),
 
     Nominee.create({
-      name: "John Haptas and Kristine Samuelson",
+      name: "John Haptas & Kristine Samuelson",
       categoryId: categories[9].id,
       movieId: movies[28].id
     }),
     Nominee.create({
-      name: "Smriti Mundhra and Sami Khan",
+      name: "Smriti Mundhra & Sami Khan",
       categoryId: categories[9].id,
       movieId: movies[29].id
     }),
     Nominee.create({
-      name: "Laura Nix and Colette Sandstedt",
+      name: "Laura Nix & Colette Sandstedt",
       categoryId: categories[9].id,
       movieId: movies[30].id
     }),
     Nominee.create({
-      name: "Carol Dysinger and Elena Andreicheva",
+      name: "Carol Dysinger & Elena Andreicheva",
       categoryId: categories[9].id,
       movieId: movies[53].id
     }),
     Nominee.create({
-      name: "Michael McCusker and Andrew Buckland",
+      name: "Michael McCusker & Andrew Buckland",
       categoryId: categories[10].id,
       movieId: movies[31].id
     }),
@@ -389,7 +412,7 @@ async function seed() {
       movieId: movies[32].id
     }),
     Nominee.create({
-      name: "Ljubo Stefanov and Tamara Kotevska",
+      name: "Ljubo Stefanov & Tamara Kotevska",
       categoryId: categories[11].id,
       movieId: movies[25].id
     }),
@@ -409,12 +432,12 @@ async function seed() {
       movieId: movies[20].id
     }),
     Nominee.create({
-      name: "Kazu Hiro, Anne Morgan and Vivian Baker",
+      name: "Kazu Hiro, Anne Morgan & Vivian Baker",
       categoryId: categories[12].id,
       movieId: movies[9].id
     }),
     Nominee.create({
-      name: "Nicki Ledermann and Kay Georgiou",
+      name: "Nicki Ledermann & Kay Georgiou",
       categoryId: categories[12].id,
       movieId: movies[3].id
     }),
@@ -424,12 +447,12 @@ async function seed() {
       movieId: movies[10].id
     }),
     Nominee.create({
-      name: "Paul Gooch, Arjen Tuiten and David White",
+      name: "Paul Gooch, Arjen Tuiten & David White",
       categoryId: categories[12].id,
       movieId: movies[34].id
     }),
     Nominee.create({
-      name: "Naomi Donne, Tristan Versluis and Rebecca Cole",
+      name: "Naomi Donne, Tristan Versluis & Rebecca Cole",
       categoryId: categories[12].id,
       movieId: movies[19].id
     }),
@@ -474,12 +497,12 @@ async function seed() {
       movieId: movies[37].id
     }),
     Nominee.create({
-      name: "Kristen Anderson-Lopez and Robert Lopez",
+      name: "Kristen Anderson-Lopez & Robert Lopez",
       categoryId: categories[14].id,
       movieId: movies[38].id
     }),
     Nominee.create({
-      name: "Joshuah Brian Campbell and Cynthia Erivo",
+      name: "Joshuah Brian Campbell & Cynthia Erivo",
       categoryId: categories[14].id,
       movieId: movies[7].id
     }),
@@ -539,7 +562,7 @@ async function seed() {
       movieId: movies[12].id
     }),
     Nominee.create({
-      name: "Dennis Gassner+Lee Sandales",
+      name: "Dennis Gassner+Lee Sales",
       categoryId: categories[16].id,
       movieId: movies[19].id
     }),
@@ -559,17 +582,17 @@ async function seed() {
       movieId: movies[39].id
     }),
     Nominee.create({
-      name: "Matthew A. Cherry and Karen Rupert Toliver",
+      name: "Matthew A. Cherry & Karen Rupert Toliver",
       categoryId: categories[17].id,
       movieId: movies[40].id
     }),
     Nominee.create({
-      name: "Rosana Sullivan and Kathryn Hendrickson",
+      name: "Rosana Sullivan & Kathryn Hendrickson",
       categoryId: categories[17].id,
       movieId: movies[41].id
     }),
     Nominee.create({
-      name: "Bruno Collet and Jean-Francois Le Corre",
+      name: "Bruno Collet & Jean-Francois Le Corre",
       categoryId: categories[17].id,
       movieId: movies[42].id
     }),
@@ -579,12 +602,12 @@ async function seed() {
       movieId: movies[43].id
     }),
     Nominee.create({
-      name: "Meryam Joobeur and Maria Gracia Turgeon",
+      name: "Meryam Joobeur & Maria Gracia Turgeon",
       categoryId: categories[18].id,
       movieId: movies[44].id
     }),
     Nominee.create({
-      name: "Yves Piat and Damien Megherbi",
+      name: "Yves Piat & Damien Megherbi",
       categoryId: categories[18].id,
       movieId: movies[45].id
     }),
@@ -594,7 +617,7 @@ async function seed() {
       movieId: movies[46].id
     }),
     Nominee.create({
-      name: "Bryan Buckley and Matt Lefebvre",
+      name: "Bryan Buckley & Matt Lefebvre",
       categoryId: categories[18].id,
       movieId: movies[47].id
     }),
@@ -614,7 +637,7 @@ async function seed() {
       movieId: movies[3].id
     }),
     Nominee.create({
-      name: "Oliver Tarney and Rachael Tate",
+      name: "Oliver Tarney & Rachael Tate",
       categoryId: categories[19].id,
       movieId: movies[19].id
     }),
@@ -624,58 +647,58 @@ async function seed() {
       movieId: movies[1].id
     }),
     Nominee.create({
-      name: "Matthew Wood and David Acord",
+      name: "Matthew Wood & David Acord",
       categoryId: categories[19].id,
       movieId: movies[35].id
     }),
     Nominee.create({
-      name: "Gary Rydstrom, Tom Johnson and Mark Ulano",
+      name: "Gary Rydstrom, Tom Johnson & Mark Ulano",
       categoryId: categories[20].id,
       movieId: movies[49].id
     }),
     Nominee.create({
-      name: "Paul Massey, David Giammarco and Steven A. Morrow",
+      name: "Paul Massey, David Giammarco & Steven A. Morrow",
       categoryId: categories[20].id,
       movieId: movies[31].id
     }),
     Nominee.create({
-      name: "Tom Ozanich, Dean Zupancic and Tod Maitland",
+      name: "Tom Ozanich, Dean Zupancic & Tod Maitland",
       categoryId: categories[20].id,
       movieId: movies[3].id
     }),
     Nominee.create({
-      name: "Mark Taylor and Stuart Wilson",
+      name: "Mark Taylor & Stuart Wilson",
       categoryId: categories[20].id,
       movieId: movies[19].id
     }),
     Nominee.create({
-      name: "Michael Minkler, Christian P. Minkler and Mark Ulano",
+      name: "Michael Minkler, Christian P. Minkler & Mark Ulano",
       categoryId: categories[20].id,
       movieId: movies[1].id
     }),
     Nominee.create({
-      name: "Dan DeLeeuw, Russell Earl, Matt Aitken and Dan Sudick",
+      name: "Dan DeLeeuw, Russell Earl, Matt Aitken & Dan Sudick",
       categoryId: categories[21].id,
       movieId: movies[50].id
     }),
     Nominee.create({
       name:
-        "Pablo Helman, Leandro Estebecorena,\nNelson Sepulveda-Fauser and Stephane Grabli",
+        "Pablo Helman, Leandro Estebecorena,\nNelson Sepulveda-Fauser & Stephane Grabli",
       categoryId: categories[21].id,
       movieId: movies[6].id
     }),
     Nominee.create({
-      name: "Robert Legato, Adam Valdez, Andrew R. Jones and Elliot Newman",
+      name: "Robert Legato, Adam Valdez, Andrew R. Jones & Elliot Newman",
       categoryId: categories[21].id,
       movieId: movies[51].id
     }),
     Nominee.create({
-      name: "Guillaume Rocheron, Greg Butler and Dominic Tuohy",
+      name: "Guillaume Rocheron, Greg Butler & Dominic Tuohy",
       categoryId: categories[21].id,
       movieId: movies[19].id
     }),
     Nominee.create({
-      name: "Roger Guyett, Neal Scanlan, Patrick Tubach and Dominic Tuohy",
+      name: "Roger Guyett, Neal Scanlan, Patrick Tubach & Dominic Tuohy",
       categoryId: categories[21].id,
       movieId: movies[35].id
     }),
@@ -715,7 +738,7 @@ async function seed() {
       movieId: movies[2].id
     }),
     Nominee.create({
-      name: "Sam Mendes and Krysty Wilson-Cairns",
+      name: "Sam Mendes & Krysty Wilson-Cairns",
       categoryId: categories[23].id,
       movieId: movies[19].id
     }),
@@ -725,7 +748,7 @@ async function seed() {
       movieId: movies[1].id
     }),
     Nominee.create({
-      name: "Bong Joon Ho and Han Jin Won",
+      name: "Bong Joon Ho & Han Jin Won",
       categoryId: categories[23].id,
       movieId: movies[20].id
     })

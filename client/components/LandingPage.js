@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
-import HomeCarousel from './HomeCarousel';
-import TopBar from './TopBar';
-import { withRouter } from 'react-router-dom';
-import { isMobile } from 'react-device-detect';
+import React, { useState } from "react";
+import HomeCarousel from "./HomeCarousel";
+import TopBar from "./TopBar";
+import { withRouter } from "react-router-dom";
+import { isMobile } from "react-device-detect";
 
 const LandingPage = props => {
   const imageUrls = [
-    'movies/ford.jpg',
-    'movies/irishman.jpg',
-    'movies/jojo.jpg',
-    'movies/joker.jpg',
-    'movies/marr.jpg',
-    'movies/nin.jpg',
-    'movies/onceupon.jpg',
-    'movies/parasite.jpg',
-    'movies/uncut.jpg',
+    "movies/ford.jpg",
+    "movies/irishman.jpg",
+    "movies/jojo.jpg",
+    "movies/joker.jpg",
+    "movies/marr.jpg",
+    "movies/nin.jpg",
+    "movies/onceupon.jpg",
+    "movies/parasite.jpg",
+    "movies/uncut.jpg"
   ];
 
   const [unload, triggerUnload] = useState(false);
@@ -28,7 +28,7 @@ const LandingPage = props => {
   return (
     <React.Fragment>
       <TopBar unload={unload} />
-      <div id="landing" className={unload ? 'unload' : ''}>
+      <div id="landing" className={unload ? "unload" : ""}>
         {!isMobile && <HomeCarousel imageUrls={imageUrls} />}
         <div id="title">
           <h1 className="main">OSCARS</h1>
@@ -38,9 +38,9 @@ const LandingPage = props => {
           id="home-button"
           className="next-button"
           type="button"
-          onClick={() => changePage('/survey')}
+          onClick={() => changePage("/survey")}
         >
-          Take Survey
+          <span id="take-survey-arrow">&#10230;</span>
         </button>
       </div>
     </React.Fragment>
