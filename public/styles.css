@@ -535,6 +535,9 @@ h5 span {
   display: flex;
   justify-content: space-between;
 }
+.summary-row:hover {
+  cursor: pointer;
+}
 p span {
   float: right;
 }
@@ -579,18 +582,20 @@ h1 span {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #d76d6d38;
+  background-color: white;
 }
 
 .list-header {
   width: 80%;
   letter-spacing: 4px;
-  height: 11%;
+  height: 12%;
   margin-top: 2em;
   background-color: rgb(244, 86, 86);
   color: #fff;
   font-family: dunbar-low, sans-serif;
   text-align: center;
+  border-bottom: 2.5px solid white;
+  
 }
 
 .list-header h1 {
@@ -600,7 +605,7 @@ h1 span {
 #leaderboard-list {
   border: 2px solid rgb(244, 86, 86);
   width: 80%;
-  background-color: #fff;
+  background-color: rgb(244, 86, 86);
   overflow: scroll;
 }
 
@@ -608,6 +613,7 @@ h1 span {
   display: grid;
   grid-template-columns: 2fr 10fr 4fr;
   width: 100%;
+  color: white;
 }
 
 .leaderboard-row h3 {
