@@ -15,6 +15,11 @@ const CategoryDisplay = props => {
       <div id="category-name-display">
         <h2 className="category-name">{category.name}</h2>
       </div>
+      <div id="step-number">
+        <h3>
+          {step + 1}/{numPages - 1}
+        </h3>
+      </div>
       {/* <span id="middle-line"></span> */}
       <div id="nominees-display">
         {category.nominees.map((nominee, idx) => {

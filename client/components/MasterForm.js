@@ -85,11 +85,6 @@ class MasterForm extends React.Component {
                 {this.showNextButton()}
               </div>
             </div>
-            <div id="step-number">
-              <h3>
-                {step + 1} of {this.numPages - 1}
-              </h3>
-            </div>
           </div>
         ) : (
           ""

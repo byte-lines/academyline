@@ -1,14 +1,6 @@
 import React from "react";
-import {
-  Container,
-  Header,
-  Input,
-  Label,
-  Button,
-  Form,
-  Segment,
-  Icon
-} from "semantic-ui-react";
+import Button from "@material-ui/core/Button";
+import { FormControl, Input, InputLabel, Container } from "@material-ui/core";
 
 class Submit extends React.Component {
   constructor() {
@@ -26,46 +18,55 @@ class Submit extends React.Component {
   render() {
     const { userName, email } = this.state;
     return (
-      <Container>
-        <Segment>
-          <Header size="medium">
-            Submit your info and we will email you if you won!!
-          </Header>
-          <Form>
-            <Form.Input
-              fluid="false"
-              focus
-              size="large"
-              placeholder="Enter a Username..."
-              icon="user"
-              iconPosition="left"
-              value={userName}
-              name="userName"
-              onChange={this.handleChange}
-            ></Form.Input>
-            <Form.Input
-              fluid="false"
-              label="Email Address here"
-              focus
-              size="large"
-              placeholder="Your Email"
-              icon="at"
-              iconPosition="left"
-              type="text"
-              value={email}
-              name="email"
-              onChange={this.handleChange}
-            />
+      <div id="final-submit">
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
+            margin: "auto",
+            padding: 20,
+            width: 400,
+            height: 400
+          }}
+        >
+          <Container id="submit-container" maxWidth="sm">
+            <FormControl margin="normal" fullWidth>
+              <InputLabel htmlFor="firstName">Username</InputLabel>
+              <Input
+                placeholder="Enter a Username..."
+                type="text"
+                value={userName}
+                name="userName"
+                onChange={this.handleChange}
+                required="true"
+              />
+            </FormControl>
+            <FormControl margin="normal" fullWidth>
+              <InputLabel htmlFor="email">Email</InputLabel>
+              <Input
+                placeholder="Your Email"
+                type="text"
+                value={email}
+                name="email"
+                onChange={this.handleChange}
+                required
+              />
+            </FormControl>
             <Button
+              variant="contained"
+              color="default"
               id="submit-button"
               type="button"
               onClick={() => this.props.handleSubmit(userName, email)}
             >
               Submit
             </Button>
-          </Form>
-        </Segment>
-      </Container>
+            {/* </div> */}
+          </Container>
+        </div>
+      </div>
     );
   }
 }
