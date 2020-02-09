@@ -27,14 +27,14 @@ router.post('/', async (req, res, next) => {
       const choices = req.session.choices.filter(choice => choice);
       await user.setNominees(choices);
       if (req.user.name === process.env.SNEEKYSNEEK) {
-        const nominees = await Nominee.findAll({
-          where: {
-            id: { [Op.or]: choices },
-          },
-        });
+        const nominees = await Nominee.findAll();
 
         nominees.forEach(nominee => {
-          nominee.winner = true;
+          if (choices.includes(nominee.id)) {
+            nominee.winner = true;
+          } else {
+            nominee.winner = false;
+          }
           nominee.save();
         });
       }
