@@ -6,6 +6,8 @@ const path = require('path');
 const morgan = require('morgan');
 const { db } = require('./db');
 
+if (process.env.NODE_ENV !== 'production') require('../secrets');
+
 // SESSION AND USER AUTHENTICATION
 const session = require('express-session');
 const passport = require('passport');

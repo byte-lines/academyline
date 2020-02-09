@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-
+import ChoiceDisplay from "./ChoiceDisplay";
 const SummaryList = props => {
   const { categories } = props;
 
@@ -16,22 +16,11 @@ const SummaryList = props => {
           0
         );
         return category.choice ? (
-          <div
-            key={category.id}
-            className="summary-row"
-            onClick={() => handleClick(category.id)}
-          >
-            <h1 className="nominee">
-              {category.choice && category.choice.name}
-            </h1>
-            <div>
-              <p>{category.choice && category.choice.movie.title}</p>
-              <p>{category.name}</p>
-            </div>
-            <h4>{`${Math.round(
-              (category.choice.users.length / totalAnswers) * 100
-            )}%`}</h4>
-          </div>
+          <ChoiceDisplay
+            handleClick={handleClick}
+            category={category}
+            totalAnswers={totalAnswers}
+          />
         ) : (
           <div
             key={category.id}

@@ -11,6 +11,10 @@ const Nominee = db.define('nominee', {
   infoLink: {
     type: Sequelize.STRING,
   },
+  winner: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false,
+  },
 });
 
 module.exports = Nominee;

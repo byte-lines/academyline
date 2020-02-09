@@ -341,7 +341,6 @@ body {
   bottom: 244px;
   color: rgb(194, 44, 44);
   margin-left: 45px;
-  
 }
 .nominee-info {
   position: relative;
@@ -411,7 +410,6 @@ body {
 }
 h5 span {
   font-size: 16pt;
-
 }
 .original-song {
   font-size: 18pt;
@@ -421,7 +419,6 @@ h5 span {
   font-size: 12pt;
   font-weight: 150;
   color: rgb(41, 41, 41);
-
 }
 .nom-info-desc {
   font-weight: 100;
@@ -436,14 +433,16 @@ h5 span {
 
 /* SUMMARYLIST */
 
-#summary {
+#summary,
+#compare {
   height: calc(100vh - 30px);
   overflow: scroll;
   width: 100%;
   background-color: #d76d6d84;
 }
 
-#summary-list {
+#summary-list,
+#compare-list {
   margin-top: 3rem;
   display: flex;
   justify-content: center;
