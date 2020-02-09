@@ -37,18 +37,21 @@ router.post('/', async (req, res, next) => {
     });
 
     //Check if email is valid
+    if (user && req.body.email !== user.email) {
+      res.sendStatus(401);
+    } else {
+      if (!user && !req.user) {
+        // Create User
+        user = await User.create({
+          name: userName,
+          email: email,
+        });
+      }
+      const choices = req.session.choices.filter(val => val !== null);
+      await user.setNominees(choices);
 
-    // Create User
-    if (!user && !req.user) {
-      user = await User.create({
-        name: userName,
-        email: email,
-      });
+      req.login(user, err => (err ? next(err) : res.json(user)));
     }
-    const choices = req.session.choices.filter(val => val !== null);
-    await user.setNominees(choices);
-
-    req.login(user, err => (err ? next(err) : res.json(user)));
   } catch (err) {
     if (err.name === 'SequelizeUniqueConstraintError') {
       res.status(401).send('User already exists');
