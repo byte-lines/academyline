@@ -16,7 +16,7 @@ const Summary = props => {
 
   return (
     <React.Fragment>
-      <TopBar logout={logout} />
+      <TopBar logout={logout} user={user} />
       <div id="summary">
         {user.id && <SummaryList categories={categories} user={user} />}
         {!user.id && <Submit handleSubmit={props.handleSubmit} />}
