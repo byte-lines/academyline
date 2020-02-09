@@ -6,6 +6,7 @@
   "scripts": {
     "seed": "node scripts/seed.js",
     "build-client": "webpack",
+    "build-production": "webpack -p",
     "build-client-watch": "webpack -w",
     "deploy": "script/deploy",
     "start": "node server",
