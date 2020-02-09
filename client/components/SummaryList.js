@@ -1,6 +1,6 @@
-import React from 'react';
-import { withRouter } from 'react-router-dom';
-import ChoiceDisplay from './ChoiceDisplay';
+import React from "react";
+import { withRouter } from "react-router-dom";
+import ChoiceDisplay from "./ChoiceDisplay";
 const SummaryList = props => {
   const { categories } = props;
 
