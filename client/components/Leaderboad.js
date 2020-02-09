@@ -1,18 +1,18 @@
-import React from 'react';
-import axios from 'axios';
+import React from "react";
+import axios from "axios";
 
-import TopBar from './TopBar';
+import TopBar from "./TopBar";
 
 class Leaderboard extends React.Component {
   constructor() {
     super();
     this.state = {
-      users: [],
+      users: []
     };
   }
 
   async componentDidMount() {
-    const { data } = await axios.get('/api/users');
+    const { data } = await axios.get("/api/users");
 
     const users = data.map(user => {
       const numCorrect = user.nominees.reduce((total, nominee) => {
@@ -26,7 +26,7 @@ class Leaderboard extends React.Component {
       return b.numCorrect - a.numCorrect;
     });
     this.setState({
-      users,
+      users
     });
   }
 
@@ -42,9 +42,9 @@ class Leaderboard extends React.Component {
           </div>
           <div id="leaderboard-list">
             <div className="leaderboard-row">
-              <h3 className="place">Place</h3>
-              <h3 className="name">Name</h3>
-              <h3 className="correct"># Correct</h3>
+              <h3 className="place leaderboard-column">Place</h3>
+              <h3 className="name leaderboard-column">Name</h3>
+              <h3 className="correct leaderboard-column"># Correct</h3>
             </div>
             {users.map((user, i) => {
               return (
@@ -52,6 +52,7 @@ class Leaderboard extends React.Component {
                   <h3 className="place">#{i + 1}</h3>
                   <h3 className="name">{user.name}</h3>
                   <h3 className="correct">{user.numCorrect}</h3>
+                  <br />
                 </div>
               );
             })}

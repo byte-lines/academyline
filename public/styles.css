@@ -20,7 +20,7 @@ body {
 #top-bar {
   height: 50px;
   width: 100%;
-  background-color: #db3434;
+  background-color: rgb(238, 66, 66);
   display: flex;
   flex-direction: row-reverse;
   color: #fff;
@@ -515,7 +515,7 @@ h5 span {
   justify-content: center;
   flex-wrap: wrap;
   width: 80%;
-  background-color: #cc4d4d;
+  background-color: rgb(244, 86, 86);
   border-radius: 8px;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.146);
 }
@@ -551,7 +551,7 @@ p span {
   position: absolute;
   font-size: 2.5rem;
   top: -2.75rem;
-  font-weight: 250;
+  font-weight: 300;
   font-family: dunbar-low, sans-serif;
   color: #212121;
   /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.406); */
@@ -567,8 +567,10 @@ h1 span {
 
 .summary-row:hover .nominee {
   cursor: pointer;
-  font-weight: 350;
+  font-weight: 400;
 }
+
+ /* LEADERBOARD */
 
 #leaderboard {
   overflow: scroll;
@@ -582,19 +584,21 @@ h1 span {
 
 .list-header {
   width: 80%;
-  margin-top: 1rem;
-  background-color: #db3434;
+  letter-spacing: 4px;
+  height: 11%;
+  margin-top: 2em;
+  background-color: rgb(244, 86, 86);
   color: #fff;
   font-family: dunbar-low, sans-serif;
   text-align: center;
 }
 
 .list-header h1 {
-  font-size: 5rem;
+  font-size: 4rem;
 }
 
 #leaderboard-list {
-  border: 2px solid #db3434;
+  border: 2px solid rgb(244, 86, 86);
   width: 80%;
   background-color: #fff;
   overflow: scroll;
@@ -609,10 +613,13 @@ h1 span {
 .leaderboard-row h3 {
   padding: 5px;
   font-family: dunbar-low, sans-serif;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .leaderboard-row h3.place,
 .leaderboard-row h3.correct {
   text-align: center;
+}
+.leaderboard-column {
+  text-decoration: underline;
 }
