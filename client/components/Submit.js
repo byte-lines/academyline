@@ -19,52 +19,42 @@ class Submit extends React.Component {
     const { userName, email } = this.state;
     return (
       <div id="final-submit">
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            flexDirection: "column",
-            margin: "auto",
-            padding: 20,
-            width: 400,
-            height: 400
-          }}
-        >
-          <Container id="submit-container" maxWidth="sm">
-            <FormControl margin="normal" fullWidth>
-              <InputLabel htmlFor="firstName">Username</InputLabel>
-              <Input
-                placeholder="Enter a Username..."
-                type="text"
-                value={userName}
-                name="userName"
-                onChange={this.handleChange}
-                required="true"
-              />
-            </FormControl>
-            <FormControl margin="normal" fullWidth>
-              <InputLabel htmlFor="email">Email</InputLabel>
-              <Input
-                placeholder="Your Email"
-                type="text"
-                value={email}
-                name="email"
-                onChange={this.handleChange}
-                required
-              />
-            </FormControl>
-            <Button
-              variant="contained"
-              color="default"
-              id="submit-button"
-              type="button"
-              onClick={() => this.props.handleSubmit(userName, email)}
-            >
-              Submit
-            </Button>
-            {/* </div> */}
-          </Container>
+        <h3 id="submit-header">Enter your info to save your choices!</h3>
+        <div id="submit-container">
+          <FormControl margin="normal" fullWidth>
+            <InputLabel htmlFor="firstName">Username</InputLabel>
+            <Input
+              placeholder="Enter a Username..."
+              type="text"
+              value={userName}
+              name="userName"
+              onChange={this.handleChange}
+              required="true"
+            />
+          </FormControl>
+          <FormControl margin="normal" fullWidth>
+            <InputLabel htmlFor="email">Email</InputLabel>
+            <Input
+              placeholder="Enter your email..."
+              type="text"
+              value={email}
+              name="email"
+              onChange={this.handleChange}
+              required="true"
+            />
+          </FormControl>
+          <Button
+            id="submit-button"
+            style={{ marginTop: 32 }}
+            size="large"
+            variant="contained"
+            color="default"
+            type="button"
+            onClick={() => this.props.handleSubmit(userName, email)}
+          >
+            Submit
+          </Button>
+          {/* </div> */}
         </div>
       </div>
     );
