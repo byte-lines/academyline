@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
+import TopBar from './TopBar';
+
 class Leaderboard extends React.Component {
   constructor() {
     super();
@@ -19,6 +21,10 @@ class Leaderboard extends React.Component {
       user.numCorrect = numCorrect;
       return user;
     });
+
+    users.sort((a, b) => {
+      return b.numCorrect - a.numCorrect;
+    });
     this.setState({
       users,
     });
@@ -27,16 +33,20 @@ class Leaderboard extends React.Component {
   render() {
     const users = this.state.users || [];
     return (
-      <div id="leaderboard">
-        {users.map(user => {
-          return (
-            <h1 key={user.id}>
-              {user.name}
-              {user.numCorrect}
-            </h1>
-          );
-        })}
-      </div>
+      <React.Fragment>
+        <TopBar />
+        <div id="leaderboard">
+          <h1>Leaderboard</h1>
+          {users.map(user => {
+            return (
+              <div className="leaderboard-row" key={user.id}>
+                <h3>{user.name}</h3>
+                <h3>{user.numCorrect}</h3>
+              </div>
+            );
+          })}
+        </div>
+      </React.Fragment>
     );
   }
 }
