@@ -20,7 +20,7 @@ body {
 #top-bar {
   height: 50px;
   width: 100%;
-  background-color: #db3434;
+  background-color: rgb(238, 66, 66);
   display: flex;
   font-weight: 100;
   justify-content: space-around;
@@ -503,16 +503,22 @@ h5 span {
   height: calc(100vh - 50px);
   overflow: scroll;
   width: 100%;
-  background-color: rgb(242, 242, 242);
+  background-color: white;
 }
 
 #summary-list,
 #compare-list {
+  padding-top: 30px;
+  margin-left: 10%;
+  margin-right: 10%;
   margin-top: 3rem;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  width: 100%;
+  width: 80%;
+  background-color: rgb(244, 86, 86);
+  border-radius: 8px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.146);
 }
 
 .summary-row {
@@ -520,14 +526,24 @@ h5 span {
   display: flex;
   flex-wrap: wrap;
   position: relative;
-  background-color: #db3334;
-  color: white;
+  background-color: white;
+  color: gray;
+  font-weight: 500;
   border-radius: 10px;
   padding: 15px 10px;
   margin: 2rem 1rem;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.146);
   display: flex;
   justify-content: space-between;
+}
+.summary-row:hover {
+  cursor: pointer;
+}
+p span {
+  float: right;
+}
+.choice-info {
+  width: 100%
 }
 
 .summary-row .nominee {
@@ -537,26 +553,28 @@ h5 span {
   overflow: hidden;
   text-overflow: ellipsis;
   position: absolute;
-  font-size: 3rem;
+  font-size: 2.5rem;
   top: -2.75rem;
+  font-weight: 300;
   font-family: dunbar-low, sans-serif;
-  font-weight: 500;
-  color: black;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.406);
+  color: #212121;
+  /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.406); */
 }
-
+h1 span {
+  font-size: 20pt;
+  text-decoration: none;
+}
 .summary-row.unselected {
-  background-color: transparent;
+  background-color: white;
   border: 2px dashed #db3334;
 }
 
-.summary-row:hover {
+.summary-row:hover .nominee {
   cursor: pointer;
+  font-weight: 400;
 }
 
-.summary-row:hover .nominee {
-  text-decoration: underline;
-}
+ /* LEADERBOARD */
 
 #leaderboard {
   overflow: scroll;
@@ -565,26 +583,30 @@ h5 span {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #d76d6d38;
+  background-color: white;
 }
 
 .list-header {
   width: 80%;
-  margin-top: 1rem;
-  background-color: #db3434;
+  letter-spacing: 4px;
+  height: 12%;
+  margin-top: 2em;
+  background-color: rgb(244, 86, 86);
   color: #fff;
   font-family: dunbar-low, sans-serif;
   text-align: center;
+  border-bottom: 2.5px solid white;
+  
 }
 
 .list-header h1 {
-  font-size: 5rem;
+  font-size: 4rem;
 }
 
 #leaderboard-list {
-  border: 2px solid #db3434;
+  border: 2px solid rgb(244, 86, 86);
   width: 80%;
-  background-color: #fff;
+  background-color: rgb(244, 86, 86);
   overflow: scroll;
 }
 
@@ -592,15 +614,19 @@ h5 span {
   display: grid;
   grid-template-columns: 2fr 10fr 4fr;
   width: 100%;
+  color: white;
 }
 
 .leaderboard-row h3 {
   padding: 5px;
   font-family: dunbar-low, sans-serif;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .leaderboard-row h3.place,
 .leaderboard-row h3.correct {
   text-align: center;
+}
+.leaderboard-column {
+  text-decoration: underline;
 }
