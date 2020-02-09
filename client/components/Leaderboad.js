@@ -32,10 +32,10 @@ class Leaderboard extends React.Component {
 
   render() {
     const users = this.state.users || [];
-    const { logout } = this.props;
+    const { logout, user } = this.props;
     return (
       <React.Fragment>
-        <TopBar logout={logout} />
+        <TopBar logout={logout} user={user} />
         <div id="leaderboard">
           <div className="list-header">
             <h1>Leaderboard</h1>

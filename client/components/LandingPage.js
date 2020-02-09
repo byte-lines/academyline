@@ -1,23 +1,27 @@
-import React, { useState } from "react";
-import HomeCarousel from "./HomeCarousel";
-import TopBar from "./TopBar";
-import { withRouter } from "react-router-dom";
-import { isMobile } from "react-device-detect";
+import React, { useState } from 'react';
+import HomeCarousel from './HomeCarousel';
+import TopBar from './TopBar';
+import { withRouter } from 'react-router-dom';
+import { isMobile } from 'react-device-detect';
 
 const LandingPage = props => {
   const imageUrls = [
-    "movies/ford.jpg",
-    "movies/irishman.jpg",
-    "movies/jojo.jpg",
-    "movies/joker.jpg",
-    "movies/marr.jpg",
-    "movies/nin.jpg",
-    "movies/onceupon.jpg",
-    "movies/parasite.jpg",
-    "movies/uncut.jpg"
+    'movies/ford.jpg',
+    'movies/irishman.jpg',
+    'movies/jojo.jpg',
+    'movies/joker.jpg',
+    'movies/marr.jpg',
+    'movies/nin.jpg',
+    'movies/onceupon.jpg',
+    'movies/parasite.jpg',
+    'movies/uncut.jpg',
+    'movies/littlewomen.png',
   ];
 
-  const [unload, triggerUnload] = useState(false);
+  for (let i = imageUrls.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [imageUrls[i], imageUrls[j]] = [imageUrls[j], imageUrls[i]];
+  }
 
   const changePage = newPage => {
     // triggerUnload(true);
@@ -25,10 +29,12 @@ const LandingPage = props => {
     props.history.push(newPage);
   };
 
+  const { logout, user } = props;
+
   return (
     <React.Fragment>
-      <TopBar unload={unload} />
-      <div id="landing" className={unload ? "unload" : ""}>
+      <TopBar logout={logout} user={user} />
+      <div id="landing" className={''}>
         {!isMobile && <HomeCarousel imageUrls={imageUrls} />}
         <div id="title">
           <h1 className="main">OSCARS</h1>
@@ -38,7 +44,7 @@ const LandingPage = props => {
           id="home-button"
           className="next-button"
           type="button"
-          onClick={() => changePage("/survey")}
+          onClick={() => changePage('/survey')}
         >
           <span id="take-survey-arrow">&#10230;</span>
         </button>

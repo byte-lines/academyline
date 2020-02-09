@@ -22,7 +22,8 @@ body {
   width: 100%;
   background-color: #db3434;
   display: flex;
-  flex-direction: row-reverse;
+  font-weight: 100;
+  justify-content: space-around;
   color: #fff;
   font-family: dunbar-low, sans-serif;
 }
@@ -96,17 +97,17 @@ body {
 
 #desktop-carousel .image-container:before {
   position: absolute;
-  content: ' ';
+  content: '';
   height: 100%;
   width: 100%;
   z-index: 2;
-  background-color: #db343419;
+  /* background-color: #db343419; */
 }
 
 #desktop-carousel .image-container img {
   height: 150vh;
   min-width: 50vw;
-  top: -25vh;
+  top: -10vh;
   position: absolute;
   right: 0;
 }
@@ -360,7 +361,7 @@ body {
 }
 .nominee-info1 {
   position: relative;
-  margin-top: 100px;
+  margin-top: 30px;
   padding: 10px 10px;
 }
 
