@@ -10,7 +10,7 @@ import Leaderboard from './components/Leaderboad';
 class Routes extends React.Component {
   render() {
     const { categories, choices, user } = this.props;
-    const { handleSelect, handleSubmit } = this.props;
+    const { handleSelect, handleSubmit, logout } = this.props;
     return (
       <Switch>
         <Route
@@ -32,6 +32,7 @@ class Routes extends React.Component {
               choices={choices}
               user={user}
               handleSubmit={handleSubmit}
+              logout={logout}
             />
           )}
         />
@@ -43,9 +44,11 @@ class Routes extends React.Component {
         /> */}
         <Route
           path="/leaderboard"
-          render={() => <Leaderboard categories={categories} user={user} />}
+          render={() => (
+            <Leaderboard categories={categories} user={user} logout={logout} />
+          )}
         />
-        <Route component={LandingPage} />
+        <Route component={LandingPage} logout={logout} />
       </Switch>
     );
   }

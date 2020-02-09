@@ -5,7 +5,7 @@ import SummaryList from './SummaryList';
 import Submit from './Submit';
 
 const Summary = props => {
-  const { choices, user } = props;
+  const { choices, user, logout } = props;
 
   const categories = props.categories.map(category => {
     category.choice = category.nominees.find(nominee =>
@@ -16,7 +16,7 @@ const Summary = props => {
 
   return (
     <React.Fragment>
-      <TopBar />
+      <TopBar logout={logout} />
       <div id="summary">
         {user.id && <SummaryList categories={categories} />}
         {!user.id && <Submit handleSubmit={props.handleSubmit} />}
