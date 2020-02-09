@@ -1,8 +1,8 @@
-import React from 'react';
-import { withRouter } from 'react-router-dom';
-import TopBar from './TopBar';
-import SummaryList from './SummaryList';
-import Submit from './Submit';
+import React from "react";
+import { withRouter } from "react-router-dom";
+import TopBar from "./TopBar";
+import SummaryList from "./SummaryList";
+import Submit from "./Submit";
 
 const Summary = props => {
   const { choices, user, logout } = props;
@@ -18,7 +18,7 @@ const Summary = props => {
     <React.Fragment>
       <TopBar logout={logout} />
       <div id="summary">
-        {user.id && <SummaryList categories={categories} />}
+        {user.id && <SummaryList categories={categories} user={user} />}
         {!user.id && <Submit handleSubmit={props.handleSubmit} />}
       </div>
     </React.Fragment>
