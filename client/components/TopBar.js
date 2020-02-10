@@ -24,6 +24,7 @@ const TopBar = props => {
           </h2>
         </React.Fragment>
       )}
+      {!user && <h2 onClick={() => navTo('/login')}>Login</h2>}
     </div>
   );
 };
