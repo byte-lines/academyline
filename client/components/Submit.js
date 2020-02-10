@@ -18,9 +18,9 @@ class Submit extends React.Component {
   render() {
     const { userName, email } = this.state;
     return (
-      <div id="final-submit">
-        <h3 id="submit-header">Enter your info to save your choices!</h3>
-        <div id="submit-container">
+      <div className="final-submit">
+        <h3 className="submit-header">Enter your info to save your choices!</h3>
+        <div className="submit-container">
           <FormControl margin="normal" fullWidth>
             <InputLabel htmlFor="firstName">Username</InputLabel>
             <Input

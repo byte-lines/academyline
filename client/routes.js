@@ -6,6 +6,7 @@ import LandingPage from "./components/LandingPage";
 import Summary from "./components/Summary";
 import Compare from "./components/Compare";
 import Leaderboard from "./components/Leaderboad";
+import Login from "./components/Login";
 
 class Routes extends React.Component {
   render() {
@@ -48,6 +49,10 @@ class Routes extends React.Component {
           render={() => (
             <Leaderboard categories={categories} user={user} logout={logout} />
           )}
+        />
+        <Route
+          path="/login"
+          render={() => <Login setUser={this.props.setUser} />}
         />
         <Route render={() => <LandingPage logout={logout} user={user} />} />
       </Switch>

@@ -466,8 +466,10 @@ h5 span {
 }
 
 /* SUBMIT */
-
-#final-submit {
+.login-info {
+  margin-top: 1.5rem
+}
+.final-submit {
   width: 100%;
   height: 100%;
   background-color: white;
@@ -475,11 +477,12 @@ h5 span {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  
 }
-#submit-header {
+.submit-header {
   margin-bottom: 24px;
 }
-#submit-container {
+.submit-container {
   display: 'flex';
   justify-content: 'center';
   align-items: 'center';
