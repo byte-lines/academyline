@@ -4,7 +4,7 @@ module.exports = router;
 
 router.post('/login', async (req, res, next) => {
   try {
-    const user = await User.findOne({ where: { name: req.body.name } });
+    const user = await User.findOne({ where: { name: req.body.userName } });
     if (!user) {
       console.log('No such user found:', req.body.name);
       res.status(401).send('Wrong username and/or email');
