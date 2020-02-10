@@ -1,6 +1,6 @@
-import React from 'react';
-import { withRouter } from 'react-router-dom';
-import axios from 'axios';
+import React from "react";
+import { withRouter } from "react-router-dom";
+import axios from "axios";
 
 const TopBar = props => {
   const navTo = page => {
@@ -9,12 +9,12 @@ const TopBar = props => {
   const { user } = props;
 
   return (
-    <div id="top-bar" className={props.unload ? 'unload' : ''}>
+    <div id="top-bar" className={props.unload ? "unload" : ""}>
       {user && user.id && (
         <React.Fragment>
-          <h2 onClick={() => navTo('/survey')}>Survey</h2>
-          <h2 onClick={() => navTo('/summary')}>Results</h2>
-          <h2 onClick={() => navTo('/leaderboard')}>Leaderboard</h2>
+          <h2 onClick={() => navTo("/survey")}>Survey</h2>
+          <h2 onClick={() => navTo("/summary")}>Results</h2>
+          <h2 onClick={() => navTo("/leaderboard")}>Leaderboard</h2>
           <h2
             onClick={() => {
               props.logout();
@@ -24,7 +24,7 @@ const TopBar = props => {
           </h2>
         </React.Fragment>
       )}
-      {!user && <h2 onClick={() => navTo('/login')}>Login</h2>}
+      {!user.id && <h2 onClick={() => navTo("/login")}>Login</h2>}
     </div>
   );
 };
